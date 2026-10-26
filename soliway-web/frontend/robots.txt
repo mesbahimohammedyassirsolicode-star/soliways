@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /ui-kit/
+
+Sitemap: https://soliways.solicode.co/sitemap.xml

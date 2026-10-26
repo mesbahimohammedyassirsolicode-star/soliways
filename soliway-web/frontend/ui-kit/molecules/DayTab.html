@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DayTab — Preview</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700&family=Manrope:wght@500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: { DEFAULT: '#25A6AC', glow: 'rgba(37, 166, 172, 0.4)' },
+            dark: { DEFAULT: '#101828', surface: '#162036', card: '#1A2640', border: '#22314E' }
+          },
+          fontFamily: { sans: ['Manrope', 'sans-serif'], heading: ['Inter', 'sans-serif'] },
+          boxShadow: { 'glow-primary': '0 0 25px -5px rgba(37, 166, 172, 0.45)' }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#0b101c] text-white p-8 font-sans flex items-center justify-center min-h-screen">
+
+  <div class="max-w-2xl w-full bg-dark-surface border border-dark-border rounded-3xl p-8 space-y-6" x-data="{ activeDay: 1 }">
+    <div class="border-b border-dark-border pb-4">
+      <span class="text-xs font-mono text-primary uppercase tracking-wider">Molecule: DayTab</span>
+      <h2 class="text-xl font-heading font-bold text-white mt-1">Onglets du Programme (Actif & Inactif)</h2>
+    </div>
+
+    <!-- DayTab Grid -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+      
+      <!-- Day 1 Button -->
+      <button @click="activeDay = 1"
+              :class="activeDay === 1 ? 'bg-primary text-white shadow-glow-primary border-primary' : 'bg-dark hover:bg-dark-card text-slate-400 border-dark-border'"
+              class="p-4 rounded-2xl border text-left transition-all duration-200">
+        <span class="block text-[11px] font-bold uppercase tracking-wider opacity-80">Jour 1</span>
+        <span class="block text-sm font-heading font-extrabold mt-0.5">13 Avril</span>
+        <span class="block text-xs truncate opacity-70 mt-1">Ouverture</span>
+      </button>
+
+      <!-- Day 2 Button -->
+      <button @click="activeDay = 2"
+              :class="activeDay === 2 ? 'bg-primary text-white shadow-glow-primary border-primary' : 'bg-dark hover:bg-dark-card text-slate-400 border-dark-border'"
+              class="p-4 rounded-2xl border text-left transition-all duration-200">
+        <span class="block text-[11px] font-bold uppercase tracking-wider opacity-80">Jour 2</span>
+        <span class="block text-sm font-heading font-extrabold mt-0.5">14 Avril</span>
+        <span class="block text-xs truncate opacity-70 mt-1">Ateliers IT</span>
+      </button>
+
+      <!-- Day 3 Button -->
+      <button @click="activeDay = 3"
+              :class="activeDay === 3 ? 'bg-primary text-white shadow-glow-primary border-primary' : 'bg-dark hover:bg-dark-card text-slate-400 border-dark-border'"
+              class="p-4 rounded-2xl border text-left transition-all duration-200">
+        <span class="block text-[11px] font-bold uppercase tracking-wider opacity-80">Jour 3</span>
+        <span class="block text-sm font-heading font-extrabold mt-0.5">15 Avril</span>
+        <span class="block text-xs truncate opacity-70 mt-1">Forum & Speakers</span>
+      </button>
+
+      <!-- Day 4 Button (Hackathon) -->
+      <button @click="activeDay = 4"
+              :class="activeDay === 4 ? 'bg-primary text-white shadow-glow-primary border-primary' : 'bg-dark hover:bg-dark-card text-slate-400 border-dark-border'"
+              class="p-4 rounded-2xl border text-left transition-all duration-200">
+        <span class="block text-[11px] font-bold uppercase tracking-wider opacity-80">Jour 4</span>
+        <span class="block text-sm font-heading font-extrabold mt-0.5">16 Avril</span>
+        <span class="block text-xs truncate opacity-70 mt-1">Hackathon</span>
+      </button>
+
+    </div>
+
+    <div class="text-xs text-slate-400 font-mono text-center pt-2">
+      Jour actif sélectionné: <span class="text-primary font-bold" x-text="'Jour ' + activeDay"></span>
+    </div>
+  </div>
+
+</body>
+</html>

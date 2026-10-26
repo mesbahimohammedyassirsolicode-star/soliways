@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgendaItem — Preview</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: { DEFAULT: '#25A6AC', glow: 'rgba(37, 166, 172, 0.4)' },
+            secondary: { DEFAULT: '#456BB8' },
+            dark: { DEFAULT: '#101828', surface: '#162036', card: '#1A2640', border: '#22314E' }
+          },
+          fontFamily: { sans: ['Manrope', 'sans-serif'], heading: ['Inter', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#0b101c] text-white p-8 font-sans flex items-center justify-center min-h-screen">
+
+  <div class="max-w-xl w-full bg-dark-surface border border-dark-border rounded-3xl p-8 space-y-4">
+    <span class="text-xs font-mono text-primary uppercase tracking-wider block">Molecule: AgendaItem</span>
+    
+    <!-- Agenda Item Card -->
+    <div class="relative pl-6 border-l-2 border-primary/40 space-y-2 py-1 hover:border-primary transition duration-200">
+      <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-dark border-2 border-primary"></span>
+      
+      <div class="flex items-center gap-2">
+        <span class="px-2.5 py-0.5 rounded-md text-[11px] font-bold bg-primary/10 text-primary border border-primary/20">
+          Matinée • 09:30
+        </span>
+        <span class="text-xs text-slate-400">Atelier Pratique</span>
+      </div>
+
+      <h3 class="font-heading font-bold text-lg text-white">
+        Ouverture officielle et découverte des thématiques
+      </h3>
+      
+      <p class="text-slate-400 text-sm leading-relaxed">
+        Lancement de SOLIWAY et découverte des thématiques de l'événement à travers des ateliers d'initiation consacrés au numérique.
+      </p>
+    </div>
+  </div>
+
+</body>
+</html>

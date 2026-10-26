@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Footer — Preview</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: { DEFAULT: '#25A6AC', hover: '#1E878C', glow: 'rgba(37, 166, 172, 0.4)' },
+            secondary: { DEFAULT: '#456BB8' },
+            accent: { DEFAULT: '#6554B8' },
+            dark: { DEFAULT: '#101828', surface: '#162036', card: '#1A2640', border: '#22314E' }
+          },
+          fontFamily: { sans: ['Manrope', 'sans-serif'], heading: ['Inter', 'sans-serif'] },
+          boxShadow: { 'glow-primary': '0 0 25px -5px rgba(37, 166, 172, 0.45)' }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#0b101c] text-white font-sans antialiased">
+
+  <!-- Footer Component with Official Soliways Logo & Team SOLIWAYS -->
+  <footer class="border-t border-dark-border bg-dark/95 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 py-16 space-y-12">
+      
+      <!-- Top Row -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10">
+        
+        <!-- Brand Info -->
+        <div class="lg:col-span-5 space-y-4">
+          <div class="flex items-center gap-3">
+            <img src="../assets/img/logo-nav-dark.png" alt="Soliways Logo" class="h-10 w-auto">
+          </div>
+          <p class="text-sm text-slate-400 max-w-sm leading-relaxed">
+            Événement organisé par l’équipe SOLIWAYS à Tanger du 13 au 16 avril 2027. La technologie au cœur de l’apprentissage et du partage.
+          </p>
+          <div class="pt-2 text-xs text-slate-500 font-mono tracking-wider">
+            THE WAY TO SUCCESS • YOUR FUTURE STARTS HERE
+          </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="lg:col-span-4 space-y-3">
+          <span class="text-xs font-semibold uppercase tracking-wider text-white">Navigation du site</span>
+          <ul class="space-y-2 text-sm text-slate-400">
+            <li><a href="#accueil" class="hover:text-primary transition">Accueil</a></li>
+            <li><a href="#a-propos" class="hover:text-primary transition">À propos de SOLIWAYS</a></li>
+            <li><a href="#programme" class="hover:text-primary transition">Programme officiel (4 jours)</a></li>
+            <li><a href="#thematiques" class="hover:text-primary transition">Les 5 thématiques</a></li>
+            <li><a href="#equipe" class="hover:text-primary transition">L'équipe SOLIWAYS</a></li>
+            <li><a href="#pratique" class="hover:text-primary transition">Informations pratiques & FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- Location & Key Facts -->
+        <div class="lg:col-span-3 space-y-3">
+          <span class="text-xs font-semibold uppercase tracking-wider text-white">Informations clés</span>
+          <div class="space-y-2 text-xs text-slate-400">
+            <p><strong class="text-slate-300">Lieu :</strong> SOLICODE, Tanger, Maroc</p>
+            <p><strong class="text-slate-300">Dates :</strong> 13 au 16 avril 2027</p>
+            <p><strong class="text-slate-300">Public :</strong> Grand public, passionnés IT</p>
+            <p><strong class="text-slate-300">Organisation :</strong> Équipe SOLIWAYS</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Row: Copyright & Socials -->
+      <div class="pt-8 border-t border-dark-border flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div>
+          © 2027 SOLIWAYS — Initiative portée par l’équipe SOLIWAYS. Tous droits réservés.
+        </div>
+        <div class="flex items-center gap-6">
+          <a href="#accueil" class="hover:text-slate-300 transition">Haut de page ↑</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>

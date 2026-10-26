@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button — Preview</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700&family=Manrope:wght@500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: { DEFAULT: '#25A6AC', hover: '#1E878C', glow: 'rgba(37, 166, 172, 0.4)' },
+            secondary: { DEFAULT: '#456BB8', hover: '#365696' },
+            dark: { DEFAULT: '#101828', surface: '#162036', card: '#1A2640', border: '#22314E' }
+          },
+          fontFamily: { sans: ['Manrope', 'sans-serif'], heading: ['Inter', 'sans-serif'] },
+          boxShadow: { 'glow-primary': '0 0 25px -5px rgba(37, 166, 172, 0.45)' }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#0b101c] text-white p-8 font-sans flex flex-col items-center justify-center min-h-screen space-y-8">
+
+  <div class="max-w-2xl w-full bg-dark-surface border border-dark-border rounded-3xl p-8 space-y-6">
+    <div class="border-b border-dark-border pb-4">
+      <span class="text-xs font-mono text-primary uppercase tracking-wider">Atom: Button</span>
+      <h2 class="font-heading text-xl font-bold text-white">Boutons & Variantes du Brand Guide</h2>
+    </div>
+
+    <div class="flex flex-wrap items-center gap-4">
+      <!-- Primary Turquoise Button with Arrow -->
+      <a href="#primary" class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl font-heading font-semibold text-white bg-primary hover:bg-primary-hover active:scale-[0.98] transition-all duration-200 shadow-glow-primary group">
+        <span>Commencer maintenant</span>
+        <svg class="w-4 h-4 transform group-hover:translate-x-1 transition duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+      </a>
+
+      <!-- Secondary White Button -->
+      <a href="#secondary" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-heading font-semibold text-slate-900 bg-white hover:bg-slate-100 active:scale-[0.98] transition-all duration-200 shadow-sm">
+        <span>Découvrir SOLIWAY</span>
+      </a>
+
+      <!-- Dark Blue Surface Button with Arrow -->
+      <a href="#dark" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-heading font-semibold text-white bg-dark hover:bg-dark-card border border-dark-border active:scale-[0.98] transition-all duration-200 group">
+        <span>En savoir plus</span>
+        <svg class="w-4 h-4 text-primary transform group-hover:translate-x-1 transition duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+      </a>
+
+      <!-- Disabled Button -->
+      <button disabled class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-heading font-semibold text-slate-500 bg-slate-800/40 cursor-not-allowed border border-dark-border/40">
+        <span>Inscriptions bientôt</span>
+      </button>
+    </div>
+  </div>
+
+</body>
+</html>

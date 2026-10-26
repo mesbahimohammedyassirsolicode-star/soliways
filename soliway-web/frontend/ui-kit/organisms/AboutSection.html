@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AboutSection — Preview</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: { DEFAULT: '#25A6AC', glow: 'rgba(37, 166, 172, 0.4)' },
+            secondary: { DEFAULT: '#456BB8' },
+            accent: { DEFAULT: '#6554B8' },
+            dark: { DEFAULT: '#101828', surface: '#162036', card: '#1A2640', border: '#22314E' }
+          },
+          fontFamily: { sans: ['Manrope', 'sans-serif'], heading: ['Inter', 'sans-serif'] },
+          boxShadow: { 'glow-primary': '0 0 25px -5px rgba(37, 166, 172, 0.45)' }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#0b101c] text-white font-sans antialiased">
+
+  <!-- About Section -->
+  <section id="a-propos" class="py-20 sm:py-28 relative">
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 space-y-16">
+      
+      <!-- Section Header -->
+      <div class="max-w-3xl space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-primary/10 text-primary border border-primary/20 uppercase tracking-widest">
+          À propos de SOLIWAYS
+        </div>
+        <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+          Un événement pour explorer le monde du <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-300">numérique</span>
+        </h2>
+        <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
+          SOLIWAYS est une initiative portée par l’équipe SOLIWAYS, pensée autour de l’informatique, de l’apprentissage et de l’échange d’expériences. À travers plusieurs jours d’activités, l’événement met en avant différentes thématiques du numérique et propose des formats pour apprendre, découvrir et créer.
+        </p>
+      </div>
+
+      <!-- Vision & Graphic Presentation Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <!-- Vision Statement Card -->
+        <div class="lg:col-span-7 bg-gradient-to-br from-dark-surface to-dark border border-dark-border rounded-3xl p-8 sm:p-10 space-y-6 shadow-2xl relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+          
+          <div class="space-y-3">
+            <span class="text-xs font-mono uppercase tracking-wider text-secondary font-semibold">Notre Vision</span>
+            <h3 class="font-heading text-2xl font-bold text-white">
+              Faire de SOLIWAYS un espace de rencontre et de découverte autour des technologies numériques.
+            </h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Des ateliers aux interventions de speakers, en passant par les meetups et le hackathon de développement web, SOLIWAYS favorise la découverte des technologies et la mise en pratique concrète des connaissances.
+            </p>
+          </div>
+
+          <!-- 3 Pillars Grid -->
+          <div class="pt-4 border-t border-dark-border grid grid-cols-1 sm:grid-cols-3 gap-4">
+            
+            <!-- Pillar 1: Apprendre -->
+            <div class="space-y-2 bg-dark/60 p-4 rounded-2xl border border-dark-border/60">
+              <div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary font-bold text-sm">01</div>
+              <h4 class="font-heading font-bold text-white text-base">Apprendre</h4>
+              <p class="text-slate-400 text-xs leading-relaxed">Explorer de nouvelles notions et des domaines variés de l'IT.</p>
+            </div>
+
+            <!-- Pillar 2: Échanger -->
+            <div class="space-y-2 bg-dark/60 p-4 rounded-2xl border border-dark-border/60">
+              <div class="w-8 h-8 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary font-bold text-sm">02</div>
+              <h4 class="font-heading font-bold text-white text-base">Échanger</h4>
+              <p class="text-slate-400 text-xs leading-relaxed">Partager des idées et découvrir différentes expériences inspirantes.</p>
+            </div>
+
+            <!-- Pillar 3: Pratiquer -->
+            <div class="space-y-2 bg-dark/60 p-4 rounded-2xl border border-dark-border/60">
+              <div class="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center text-accent font-bold text-sm">03</div>
+              <h4 class="font-heading font-bold text-white text-base">Pratiquer</h4>
+              <p class="text-slate-400 text-xs leading-relaxed">Mettre ses connaissances en application via des ateliers et un hackathon.</p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Visual Branding Showcase Card with Official Logo -->
+        <div class="lg:col-span-5 bg-gradient-to-tr from-dark to-dark-surface border border-dark-border rounded-3xl p-8 flex flex-col justify-between h-full min-h-[420px] shadow-2xl relative overflow-hidden group">
+          <div class="absolute inset-0 bg-gradient-to-r from-primary/10 to-accent/10 opacity-50 group-hover:opacity-75 transition duration-500"></div>
+          
+          <div class="relative z-10 flex items-center justify-between">
+            <span class="text-xs uppercase tracking-widest text-slate-400 font-semibold">Initiative SOLIWAYS</span>
+            <div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+          </div>
+
+          <div class="relative z-10 text-center py-6 space-y-3">
+            <div class="inline-block p-6 rounded-3xl bg-dark/90 border border-primary/30 shadow-glow-primary group-hover:scale-105 transition duration-300">
+              <img src="../assets/img/logo-darkmode.png" alt="Soliways Official Logo" class="h-44 w-auto mx-auto object-contain drop-shadow-[0_0_20px_rgba(37,166,172,0.45)]">
+            </div>
+          </div>
+
+          <div class="relative z-10 p-4 rounded-xl bg-dark/70 border border-dark-border text-center text-xs text-slate-300">
+            « La technologie au cœur de l’apprentissage et du partage. »
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>

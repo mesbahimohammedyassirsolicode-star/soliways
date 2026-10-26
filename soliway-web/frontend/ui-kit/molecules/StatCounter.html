@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StatCounter — Preview</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@800;900&family=Manrope:wght@600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: { DEFAULT: '#25A6AC' },
+            secondary: { DEFAULT: '#456BB8' },
+            dark: { DEFAULT: '#101828', surface: '#162036', border: '#22314E' }
+          },
+          fontFamily: { sans: ['Manrope', 'sans-serif'], heading: ['Inter', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#0b101c] text-white p-8 font-sans flex items-center justify-center min-h-screen">
+
+  <div class="max-w-xl w-full bg-dark-surface border border-dark-border rounded-3xl p-8 space-y-6">
+    <span class="text-xs font-mono text-primary uppercase tracking-wider block">Molecule: StatCounter</span>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 text-center">
+      <div class="space-y-1">
+        <div class="font-heading font-black text-3xl sm:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-300">+1000</div>
+        <div class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Participants attendus</div>
+      </div>
+      <div class="space-y-1">
+        <div class="font-heading font-black text-3xl sm:text-4xl text-white">4 Jours</div>
+        <div class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Immersion Tech</div>
+      </div>
+      <div class="space-y-1">
+        <div class="font-heading font-black text-3xl sm:text-4xl text-secondary">5 Domaines</div>
+        <div class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Ateliers Clés</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

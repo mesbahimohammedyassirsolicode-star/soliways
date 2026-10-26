@@ -1,0 +1,334 @@
+components:
+  # Atoms
+  - name: "Button"
+    category: "atoms"
+    platform: "web"
+    path: "./atoms/Button.html"
+    status: "validated"
+    description: "Multi-variant button (primary turquoise with arrow, secondary white outline, dark night blue, disabled)."
+    dependencies: []
+    specs:
+      visual: "Inline flex container with rounded corners and typography scale"
+      elements: ["Label text", "SVG Arrow icon"]
+      data: { label: "Commencer maintenant", variant: "primary" }
+      states: ["default", "hover", "active", "focus", "disabled"]
+      alpine: "none"
+      notes: "Validated by user GO."
+
+  - name: "Badge"
+    category: "atoms"
+    platform: "web"
+    path: "./atoms/Badge.html"
+    status: "validated"
+    description: "Pill badges for track categories, event dates, and registration status."
+    dependencies: []
+    specs:
+      visual: "Rounded-full pill with subtle background and colored border"
+      elements: ["Optional dot indicator", "Text label"]
+      data: { label: "13 — 16 Avril 2027", type: "primary" }
+      states: ["default"]
+      alpine: "none"
+      notes: "Validated by user GO."
+
+  - name: "Input"
+    category: "atoms"
+    platform: "web"
+    path: "./atoms/Input.html"
+    status: "validated"
+    description: "Text and email input field with cyber focus ring and validation states."
+    dependencies: []
+    specs:
+      visual: "Dark background input with subtle border and placeholder"
+      elements: ["Label", "Input element", "Error message"]
+      data: { placeholder: "votre.email@exemple.com" }
+      states: ["default", "focus", "error", "disabled"]
+      alpine: "x-model binding"
+      notes: "Validated by user GO."
+
+  - name: "IconBox"
+    category: "atoms"
+    platform: "web"
+    path: "./atoms/IconBox.html"
+    status: "validated"
+    description: "Glowing square container for modern stroke SVG icons."
+    dependencies: []
+    specs:
+      visual: "12x12 rounded-2xl container with translucent tinted background"
+      elements: ["SVG Icon"]
+      data: { icon: "code" }
+      states: ["default", "hover-scale"]
+      alpine: "none"
+      notes: "Validated by user GO."
+
+  # Molecules
+  - name: "CountdownCard"
+    category: "molecules"
+    platform: "web"
+    path: "./molecules/CountdownCard.html"
+    status: "validated"
+    description: "Numerical countdown box displaying remaining days, hours, minutes, or seconds."
+    dependencies: []
+    specs:
+      visual: "Elevated dark card with large tabular numbers"
+      elements: ["Digit display", "Time unit label"]
+      data: { value: "48", label: "Jours" }
+      states: ["default", "ticking"]
+      alpine: "Reactive Alpine.js time calculation"
+      notes: "Validated by user GO."
+
+  - name: "ThemeCard"
+    category: "molecules"
+    platform: "web"
+    path: "./molecules/ThemeCard.html"
+    status: "validated"
+    description: "Card highlighting one of the 5 event tracks with icon, description, and hover glow."
+    dependencies: ["atoms/IconBox", "atoms/Badge"]
+    specs:
+      visual: "Cyber card with gradient border on hover"
+      elements: ["IconBox", "Category badge", "Title H3", "Description text", "Read more link"]
+      data: { title: "Développement web", description: "Découvrez la création de sites et applications." }
+      states: ["default", "hover"]
+      alpine: "none"
+      notes: "Validated by user GO."
+
+  - name: "DayTab"
+    category: "molecules"
+    platform: "web"
+    path: "./molecules/DayTab.html"
+    status: "validated"
+    description: "Interactive tab button representing a program day."
+    dependencies: []
+    specs:
+      visual: "Tab pill showing day number, date, and short title"
+      elements: ["Day number badge", "Date text", "Title"]
+      data: { day: 1, date: "13 Avril 2027", title: "Ouverture & ateliers" }
+      states: ["active", "inactive", "hover"]
+      alpine: "x-on:click='activeDay = 1', dynamic class binding"
+      notes: "Validated by user GO."
+
+  - name: "AgendaItem"
+    category: "molecules"
+    platform: "web"
+    path: "./molecules/AgendaItem.html"
+    status: "validated"
+    description: "Activity card in the daily schedule timeline."
+    dependencies: ["atoms/Badge"]
+    specs:
+      visual: "Horizontal card with timeline marker, badge, title, and description"
+      elements: ["Timeline dot", "Badge", "Session title", "Description"]
+      data: { title: "Lancement de SOLIWAYS", time: "Matinée", description: "Découverte des thématiques." }
+      states: ["default", "hover"]
+      alpine: "none"
+      notes: "Validated by user GO."
+
+  - name: "PillarCard"
+    category: "molecules"
+    platform: "web"
+    path: "./molecules/PillarCard.html"
+    status: "validated"
+    description: "Feature card for the 3 pillars (Apprendre, Échanger, Pratiquer)."
+    dependencies: ["atoms/IconBox"]
+    specs:
+      visual: "Clean card with icon, bold pillar title, and narrative"
+      elements: ["IconBox", "Pillar title", "Summary text"]
+      data: { title: "Apprendre", text: "Explorer de nouvelles notions et des domaines variés de l'IT." }
+      states: ["default", "hover"]
+      alpine: "none"
+      notes: "Validated by user GO."
+
+  - name: "FaqAccordionItem"
+    category: "molecules"
+    platform: "web"
+    path: "./molecules/FaqAccordionItem.html"
+    status: "validated"
+    description: "Expandable accordion item for practical questions and event details."
+    dependencies: []
+    specs:
+      visual: "Rounded box with question header and collapsible body"
+      elements: ["Question text", "Rotating chevron icon", "Answer text"]
+      data: { q: "Où se déroule l'événement ?", a: "Chez SOLICODE à Tanger, Maroc." }
+      states: ["collapsed", "expanded"]
+      alpine: "x-data='{ open: false }', x-collapse"
+      notes: "Validated by user GO."
+
+  - name: "StatCounter"
+    category: "molecules"
+    platform: "web"
+    path: "./molecules/StatCounter.html"
+    status: "validated"
+    description: "Metric display highlighting key event stats."
+    dependencies: []
+    specs:
+      visual: "Stack with large bold number and uppercase label"
+      elements: ["Number", "Label"]
+      data: { number: "+1000", label: "Participants" }
+      states: ["default"]
+      alpine: "none"
+      notes: "Validated by user GO."
+
+  # Organisms
+  - name: "Navbar"
+    category: "organisms"
+    platform: "web"
+    path: "./organisms/Navbar.html"
+    status: "validated"
+    description: "Sticky header navigation with official Soliways logo, smooth scroll links, CTA, and mobile slide drawer."
+    dependencies: ["atoms/Button"]
+    specs:
+      visual: "Full-width bar with backdrop-blur, brand left, nav center, CTA right"
+      elements: ["Official Logo Lockup", "Nav links", "CTA button", "Hamburger button", "Mobile drawer"]
+      data: { brand: "soliways" }
+      states: ["desktop", "mobile-closed", "mobile-open", "scrolled"]
+      alpine: "x-data='{ mobileOpen: false, scrolled: false }'"
+      notes: "Validated by user GO."
+
+  - name: "Hero"
+    category: "organisms"
+    platform: "web"
+    path: "./organisms/Hero.html"
+    status: "validated"
+    description: "Futuristic hero section with night cyber styling, H1, live ticking countdown, CTAs, and stats bar."
+    dependencies: ["atoms/Badge", "atoms/Button", "molecules/CountdownCard", "molecules/StatCounter"]
+    specs:
+      visual: "Atmospheric cyber background with glowing circuit lines and gradients"
+      elements: ["Event badge", "H1 Title", "Tagline", "Narrative", "Countdown grid", "CTA buttons", "Stats bar"]
+      data: { event: "SOLIWAYS 2027", dates: "13 — 16 Avril 2027" }
+      states: ["default", "responsive"]
+      alpine: "Alpine.js countdown calculator targeting 2027-04-13T09:00:00"
+      notes: "Validated by user GO."
+
+  - name: "AboutSection"
+    category: "organisms"
+    platform: "web"
+    path: "./organisms/AboutSection.html"
+    status: "validated"
+    description: "Section detailing the event mission, vision, and 3 learning pillars with official logo showcase."
+    dependencies: ["atoms/Badge", "molecules/PillarCard"]
+    specs:
+      visual: "Structured section with editorial presentation and 3 pillars grid"
+      elements: ["Badge", "H2 Title", "Vision text", "3 Pillar Cards", "Official logo showcase"]
+      data: { organizer: "Équipe SOLIWAYS" }
+      states: ["default"]
+      alpine: "none"
+      notes: "Validated by user GO."
+
+  - name: "ProgramSection"
+    category: "organisms"
+    platform: "web"
+    path: "./organisms/ProgramSection.html"
+    status: "validated"
+    description: "Interactive 4-day agenda with day tab selector and detailed session cards."
+    dependencies: ["atoms/Badge", "molecules/DayTab", "molecules/AgendaItem"]
+    specs:
+      visual: "Tab bar on top, dynamic card panel below"
+      elements: ["Badge", "H2 Title", "Day tabs bar", "Timeline agenda panel for J1 to J4", "Validation note"]
+      data: { daysCount: 4 }
+      states: ["day1", "day2", "day3", "day4"]
+      alpine: "x-data='{ activeDay: 1 }'"
+      notes: "Validated by user GO."
+
+  - name: "ThemesSection"
+    category: "organisms"
+    platform: "web"
+    path: "./organisms/ThemesSection.html"
+    status: "validated"
+    description: "Section showcasing the 5 core IT domains with futuristic card styling."
+    dependencies: ["atoms/Badge", "molecules/ThemeCard"]
+    specs:
+      visual: "Grid of 5 cards with dark surface and cyber hover glow"
+      elements: ["Badge", "H2 Title", "5 Theme Cards"]
+      data: {}
+      states: ["default"]
+      alpine: "none"
+      notes: "Validated by user GO."
+
+  - name: "TeamSection"
+    category: "organisms"
+    platform: "web"
+    path: "./organisms/TeamSection.html"
+    status: "validated"
+    description: "Section presenting the SOLIWAYS organizing team and event manifesto."
+    dependencies: ["atoms/Badge"]
+    specs:
+      visual: "Inspiring narrative layout with callout quote"
+      elements: ["Badge", "H2 Title", "Editorial narrative", "Manifesto callout banner"]
+      data: { team: "Équipe SOLIWAYS" }
+      states: ["default"]
+      alpine: "none"
+      notes: "Validated by user GO."
+
+  - name: "RegistrationCta"
+    category: "organisms"
+    platform: "web"
+    path: "./organisms/RegistrationCta.html"
+    status: "validated"
+    description: "High-visibility registration banner with teaser CTA and modal trigger."
+    dependencies: ["atoms/Badge", "atoms/Button"]
+    specs:
+      visual: "Prominent glowing banner with cyber circuit gradient border"
+      elements: ["H2 Title", "Teaser text", "Status badge", "Trigger button"]
+      data: { statusText: "Inscriptions bientôt disponibles" }
+      states: ["default", "hover"]
+      alpine: "x-on:click='$dispatch(\"open-notify-modal\")'"
+      notes: "Validated by user GO."
+
+  - name: "PracticalFaqSection"
+    category: "organisms"
+    platform: "web"
+    path: "./organisms/PracticalFaqSection.html"
+    status: "validated"
+    description: "Practical information summary and interactive FAQ accordion."
+    dependencies: ["atoms/Badge", "molecules/FaqAccordionItem"]
+    specs:
+      visual: "Two-column layout (practical details card left, FAQ accordion right)"
+      elements: ["H2 Title", "Practical info card", "FAQ accordion items"]
+      data: { organizer: "Équipe SOLIWAYS" }
+      states: ["default"]
+      alpine: "Accordion toggle state"
+      notes: "Validated by user GO."
+
+  - name: "NotificationModal"
+    category: "organisms"
+    platform: "web"
+    path: "./organisms/NotificationModal.html"
+    status: "validated"
+    description: "Pop-in modal allowing visitors to submit their email for early registration alert."
+    dependencies: ["atoms/Button", "atoms/Input"]
+    specs:
+      visual: "Centered modal overlay with backdrop blur and smooth fade-in"
+      elements: ["Backdrop", "Modal card", "Close button", "Title", "Input", "Submit button", "Success message"]
+      data: {}
+      states: ["closed", "open", "loading", "success", "error"]
+      alpine: "x-data with window event listener, escape key support"
+      notes: "Validated by user GO."
+
+  - name: "Footer"
+    category: "organisms"
+    platform: "web"
+    path: "./organisms/Footer.html"
+    status: "validated"
+    description: "Comprehensive site footer with official Soliways logo, quick links, event facts, and social icons."
+    dependencies: []
+    specs:
+      visual: "Dark background with top border, multi-column layout"
+      elements: ["Official Logo Lockup", "Tagline", "Anchor links", "Social media icons", "Copyright notice"]
+      data: { copyright: "© 2027 SOLIWAYS — Équipe SOLIWAYS. Tous droits réservés." }
+      states: ["default"]
+      alpine: "none"
+      notes: "Validated by user GO."
+
+  # Layouts
+  - name: "DefaultLayout"
+    category: "layouts"
+    platform: "web"
+    path: "./layouts/DefaultLayout.html"
+    status: "validated"
+    description: "Base HTML5 shell with responsive viewport, Google Fonts, SEO tags, and page landmarks."
+    dependencies: ["organisms/Navbar", "organisms/Footer"]
+    specs:
+      visual: "Full-page container with dark background, smooth scrolling, and back-to-top button"
+      elements: ["HTML head", "Navbar slot", "Main content slot", "Footer slot", "Modal slot", "Scroll-to-top button"]
+      data: { title: "SOLIWAYS 2027" }
+      states: ["default"]
+      alpine: "Back-to-top visibility toggle"
+      notes: "Validated by user GO."

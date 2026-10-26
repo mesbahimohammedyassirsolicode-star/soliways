@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Badge — Preview</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: { DEFAULT: '#25A6AC' },
+            secondary: { DEFAULT: '#456BB8' },
+            accent: { DEFAULT: '#6554B8' },
+            dark: { DEFAULT: '#101828', surface: '#162036', border: '#22314E' }
+          },
+          fontFamily: { sans: ['Manrope', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#0b101c] text-white p-8 font-sans flex items-center justify-center min-h-screen">
+
+  <div class="max-w-2xl w-full bg-dark-surface border border-dark-border rounded-3xl p-8 space-y-6">
+    <div class="border-b border-dark-border pb-4">
+      <span class="text-xs font-mono text-primary uppercase tracking-wider">Atom: Badge</span>
+      <h2 class="text-xl font-bold text-white">Badges de Statut & Catégories</h2>
+    </div>
+
+    <div class="flex flex-wrap items-center gap-3">
+      <!-- Event Date Pill -->
+      <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-primary/10 text-primary border border-primary/25 tracking-wide">
+        <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+        13 — 16 Avril 2027 • Tanger
+      </span>
+
+      <!-- Track Badges -->
+      <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-secondary/15 text-secondary border border-secondary/30">
+        Développement Web
+      </span>
+
+      <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-accent/15 text-accent border border-accent/30">
+        Intelligence Artificielle
+      </span>
+
+      <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
+        Gratuit • Grand Public
+      </span>
+
+      <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/15 text-amber-400 border border-amber-500/30">
+        Inscriptions bientôt
+      </span>
+    </div>
+  </div>
+
+</body>
+</html>

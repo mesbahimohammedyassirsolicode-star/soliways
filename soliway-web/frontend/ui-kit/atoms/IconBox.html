@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IconBox — Preview</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: { DEFAULT: '#25A6AC', glow: 'rgba(37, 166, 172, 0.4)' },
+            secondary: { DEFAULT: '#456BB8' },
+            accent: { DEFAULT: '#6554B8' },
+            dark: { DEFAULT: '#101828', surface: '#162036', border: '#22314E' }
+          },
+          fontFamily: { sans: ['Manrope', 'sans-serif'] },
+          boxShadow: { 'glow-primary': '0 0 25px -5px rgba(37, 166, 172, 0.45)' }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#0b101c] text-white p-8 font-sans flex items-center justify-center min-h-screen">
+
+  <div class="max-w-2xl w-full bg-dark-surface border border-dark-border rounded-3xl p-8 space-y-6">
+    <div class="border-b border-dark-border pb-4">
+      <span class="text-xs font-mono text-primary uppercase tracking-wider">Atom: IconBox</span>
+      <h2 class="text-xl font-bold text-white">Boîtes d'Icônes Futuristes</h2>
+    </div>
+
+    <div class="flex items-center gap-6">
+      <!-- Turquoise Primary Box -->
+      <div class="w-14 h-14 rounded-2xl bg-primary/10 border border-primary/25 flex items-center justify-center text-primary shadow-glow-primary hover:scale-105 transition duration-300">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+      </div>
+
+      <!-- Secondary Digital Blue Box -->
+      <div class="w-14 h-14 rounded-2xl bg-secondary/10 border border-secondary/25 flex items-center justify-center text-secondary hover:scale-105 transition duration-300">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+      </div>
+
+      <!-- Innovation Purple Box -->
+      <div class="w-14 h-14 rounded-2xl bg-accent/10 border border-accent/25 flex items-center justify-center text-accent hover:scale-105 transition duration-300">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

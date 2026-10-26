@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CountdownCard — Preview</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800;900&family=Manrope:wght@500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: { DEFAULT: '#25A6AC', glow: 'rgba(37, 166, 172, 0.4)' },
+            dark: { DEFAULT: '#101828', surface: '#162036', card: '#1A2640', border: '#22314E' }
+          },
+          fontFamily: { sans: ['Manrope', 'sans-serif'], heading: ['Inter', 'sans-serif'] },
+          boxShadow: { 'glow-primary': '0 0 25px -5px rgba(37, 166, 172, 0.45)' }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#0b101c] text-white p-8 font-sans flex items-center justify-center min-h-screen">
+
+  <div class="max-w-xl w-full bg-dark-surface border border-dark-border rounded-3xl p-8 space-y-6 text-center">
+    <div>
+      <span class="text-xs font-mono text-primary uppercase tracking-wider">Molecule: CountdownCard</span>
+      <h2 class="text-xl font-heading font-bold text-white mt-1">Compte à Rebours en Direct (13 Avril 2027)</h2>
+    </div>
+
+    <!-- Reactive Countdown Component with Alpine.js -->
+    <div x-data="{
+      target: new Date('2027-04-13T09:00:00').getTime(),
+      days: '00', hours: '00', minutes: '00', seconds: '00',
+      update() {
+        const now = new Date().getTime();
+        const diff = Math.max(0, this.target - now);
+        this.days = String(Math.floor(diff / (1000 * 60 * 60 * 24))).padStart(2, '0');
+        this.hours = String(Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+        this.minutes = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+        this.seconds = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, '0');
+      },
+      init() {
+        this.update();
+        setInterval(() => this.update(), 1000);
+      }
+    }" class="grid grid-cols-4 gap-3 sm:gap-4">
+
+      <!-- Days -->
+      <div class="bg-dark/80 border border-dark-border rounded-2xl p-3 sm:p-4 shadow-lg backdrop-blur">
+        <span class="block font-heading font-black text-2xl sm:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-300 tabular-nums" x-text="days">00</span>
+        <span class="text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-slate-400">Jours</span>
+      </div>
+
+      <!-- Hours -->
+      <div class="bg-dark/80 border border-dark-border rounded-2xl p-3 sm:p-4 shadow-lg backdrop-blur">
+        <span class="block font-heading font-black text-2xl sm:text-4xl text-white tabular-nums" x-text="hours">00</span>
+        <span class="text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-slate-400">Heures</span>
+      </div>
+
+      <!-- Minutes -->
+      <div class="bg-dark/80 border border-dark-border rounded-2xl p-3 sm:p-4 shadow-lg backdrop-blur">
+        <span class="block font-heading font-black text-2xl sm:text-4xl text-white tabular-nums" x-text="minutes">00</span>
+        <span class="text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-slate-400">Minutes</span>
+      </div>
+
+      <!-- Seconds -->
+      <div class="bg-dark/80 border border-dark-border rounded-2xl p-3 sm:p-4 shadow-lg backdrop-blur">
+        <span class="block font-heading font-black text-2xl sm:text-4xl text-primary tabular-nums" x-text="seconds">00</span>
+        <span class="text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-slate-400">Secondes</span>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

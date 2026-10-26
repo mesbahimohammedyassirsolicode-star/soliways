@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galerie UI Kit — SOLIWAYS 2027</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: { DEFAULT: '#25A6AC', hover: '#1E878C', glow: 'rgba(37, 166, 172, 0.4)' },
+            secondary: { DEFAULT: '#456BB8' },
+            accent: { DEFAULT: '#6554B8' },
+            dark: { DEFAULT: '#101828', surface: '#162036', card: '#1A2640', border: '#22314E' }
+          },
+          fontFamily: { sans: ['Manrope', 'sans-serif'], heading: ['Inter', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <style>[x-cloak]{display:none !important}</style>
+</head>
+<body class="bg-[#070b14] text-slate-100 font-sans h-full flex flex-col overflow-hidden"
+      x-data="{
+        selectedComponent: './organisms/Hero.html',
+        componentName: 'Hero',
+        category: 'Organisms',
+        viewportWidth: '100%',
+        select(path, name, cat) {
+          this.selectedComponent = path;
+          this.componentName = name;
+          this.category = cat;
+        }
+      }">
+
+  <!-- Gallery Top Bar -->
+  <header class="h-16 border-b border-dark-border bg-dark/95 px-6 flex items-center justify-between z-30 flex-shrink-0">
+    <div class="flex items-center gap-4">
+      <div class="flex items-center gap-2.5">
+        <img src="../assets/img/logo-nav-dark.png" alt="Soliways Logo" class="h-8 w-auto">
+      </div>
+      <span class="text-xs px-2.5 py-1 rounded-md bg-primary/10 text-primary border border-primary/20 font-mono">UI Kit Catalog</span>
+    </div>
+
+    <!-- Center Component Title -->
+    <div class="hidden sm:flex items-center gap-3">
+      <span class="text-xs uppercase tracking-wider text-slate-400 font-mono" x-text="category"></span>
+      <span class="text-slate-600">/</span>
+      <span class="font-heading font-bold text-white text-sm" x-text="componentName"></span>
+    </div>
+
+    <!-- Viewport & Action Controls -->
+    <div class="flex items-center gap-3">
+      <!-- Responsive Width Switcher -->
+      <div class="hidden md:flex items-center bg-dark border border-dark-border rounded-xl p-1 text-xs">
+        <button @click="viewportWidth = '100%'" :class="viewportWidth === '100%' ? 'bg-primary text-white' : 'text-slate-400 hover:text-white'" class="px-2.5 py-1 rounded-lg transition font-medium">Desktop (100%)</button>
+        <button @click="viewportWidth = '768px'" :class="viewportWidth === '768px' ? 'bg-primary text-white' : 'text-slate-400 hover:text-white'" class="px-2.5 py-1 rounded-lg transition font-medium">Tablet (768px)</button>
+        <button @click="viewportWidth = '375px'" :class="viewportWidth === '375px' ? 'bg-primary text-white' : 'text-slate-400 hover:text-white'" class="px-2.5 py-1 rounded-lg transition font-medium">Mobile (375px)</button>
+      </div>
+
+      <!-- Open in New Tab Button -->
+      <a :href="selectedComponent" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-dark-surface hover:bg-dark-card border border-dark-border text-slate-200 transition">
+        <span>Ouvrir seul</span>
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- Body: Sidebar + Preview Stage -->
+  <div class="flex-grow flex overflow-hidden">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="w-72 bg-dark/95 border-r border-dark-border flex flex-col flex-shrink-0 overflow-y-auto p-4 space-y-6">
+      
+      <!-- Brand Guide Link -->
+      <div>
+        <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-2">Charte Graphique</span>
+        <button @click="select('./charte-graphique/index.html', 'Charte & Style Guide', 'Fondations')"
+                :class="selectedComponent.includes('charte-graphique') ? 'bg-primary/20 text-primary border-primary/40' : 'hover:bg-dark-surface text-slate-300 border-transparent'"
+                class="w-full text-left px-3 py-2 rounded-xl text-xs font-semibold border transition flex items-center justify-between">
+          <span>Guide de Style & Tokens</span>
+          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+        </button>
+      </div>
+
+      <!-- Layouts -->
+      <div>
+        <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-2">Layouts</span>
+        <div class="space-y-1">
+          <button @click="select('./layouts/DefaultLayout.html', 'DefaultLayout', 'Layouts')"
+                  :class="selectedComponent.includes('DefaultLayout') ? 'bg-primary/20 text-primary border-primary/40' : 'hover:bg-dark-surface text-slate-300 border-transparent'"
+                  class="w-full text-left px-3 py-2 rounded-xl text-xs font-medium border transition">
+            DefaultLayout
+          </button>
+        </div>
+      </div>
+
+      <!-- Organisms -->
+      <div>
+        <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-2">Organismes</span>
+        <div class="space-y-1">
+          <button @click="select('./organisms/Navbar.html', 'Navbar', 'Organismes')"
+                  :class="selectedComponent.includes('Navbar') ? 'bg-primary/20 text-primary border-primary/40' : 'hover:bg-dark-surface text-slate-300 border-transparent'"
+                  class="w-full text-left px-3 py-2 rounded-xl text-xs font-medium border transition">Navbar (Logo Adapté)</button>
+          <button @click="select('./organisms/Hero.html', 'Hero', 'Organismes')"
+                  :class="selectedComponent.includes('Hero') ? 'bg-primary/20 text-primary border-primary/40' : 'hover:bg-dark-surface text-slate-300 border-transparent'"
+                  class="w-full text-left px-3 py-2 rounded-xl text-xs font-medium border transition">Hero (Live Countdown)</button>
+          <button @click="select('./organisms/AboutSection.html', 'AboutSection', 'Organismes')"
+                  :class="selectedComponent.includes('AboutSection') ? 'bg-primary/20 text-primary border-primary/40' : 'hover:bg-dark-surface text-slate-300 border-transparent'"
+                  class="w-full text-left px-3 py-2 rounded-xl text-xs font-medium border transition">AboutSection (Logo Showcase)</button>
+          <button @click="select('./organisms/ProgramSection.html', 'ProgramSection', 'Organismes')"
+                  :class="selectedComponent.includes('ProgramSection') ? 'bg-primary/20 text-primary border-primary/40' : 'hover:bg-dark-surface text-slate-300 border-transparent'"
+                  class="w-full text-left px-3 py-2 rounded-xl text-xs font-medium border transition">ProgramSection (Tabs 4 Jours)</button>
+          <button @click="select('./organisms/ThemesSection.html', 'ThemesSection', 'Organismes')"
+                  :class="selectedComponent.includes('ThemesSection') ? 'bg-primary/20 text-primary border-primary/40' : 'hover:bg-dark-surface text-slate-300 border-transparent'"
+                  class="w-full text-left px-3 py-2 rounded-xl text-xs font-medium border transition">ThemesSection (5 Thématiques)</button>
+          <button @click="select('./organisms/TeamSection.html', 'TeamSection', 'Organismes')"
+                  :class="selectedComponent.includes('TeamSection') ? 'bg-primary/20 text-primary border-primary/40' : 'hover:bg-dark-surface text-slate-300 border-transparent'"
+                  class="w-full text-left px-3 py-2 rounded-xl text-xs font-medium border transition">TeamSection (Équipe SOLICODE)</button>
+          <button @click="select('./organisms/RegistrationCta.html', 'RegistrationCta', 'Organismes')"
+                  :class="selectedComponent.includes('RegistrationCta') ? 'bg-primary/20 text-primary border-primary/40' : 'hover:bg-dark-surface text-slate-300 border-transparent'"
+                  class="w-full text-left px-3 py-2 rounded-xl text-xs font-medium border transition">RegistrationCta (Bannière)</button>
+          <button @click="select('./organisms/PracticalFaqSection.html', 'PracticalFaqSection', 'Organismes')"
+                  :class="selectedComponent.includes('PracticalFaqSection') ? 'bg-primary/20 text-primary border-primary/40' : 'hover:bg-dark-surface text-slate-300 border-transparent'"
+                  class="w-full text-left px-3 py-2 rounded-xl text-xs font-medium border transition">PracticalFaqSection (Infos & FAQ)</button>
+          <button @click="select('./organisms/NotificationModal.html', 'NotificationModal', 'Organismes')"
+                  :class="selectedComponent.includes('NotificationModal') ? 'bg-primary/20 text-primary border-primary/40' : 'hover:bg-dark-surface text-slate-300 border-transparent'"
+                  class="w-full text-left px-3 py-2 rounded-xl text-xs font-medium border transition">NotificationModal (Popup Alerte)</button>
+          <button @click="select('./organisms/Footer.html', 'Footer', 'Organismes')"
+                  :class="selectedComponent.includes('Footer') ? 'bg-primary/20 text-primary border-primary/40' : 'hover:bg-dark-surface text-slate-300 border-transparent'"
+                  class="w-full text-left px-3 py-2 rounded-xl text-xs font-medium border transition">Footer</button>
+        </div>
+      </div>
+
+      <!-- Molecules -->
+      <div>
+        <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-2">Molécules</span>
+        <div class="space-y-1">
+          <button @click="select('./molecules/CountdownCard.html', 'CountdownCard', 'Molécules')"
+                  :class="selectedComponent.includes('CountdownCard') ? 'bg-primary/20 text-primary border-primary/40' : 'hover:bg-dark-surface text-slate-300 border-transparent'"
+                  class="w-full text-left px-3 py-2 rounded-xl text-xs font-medium border transition">CountdownCard</button>
+          <button @click="select('./molecules/ThemeCard.html', 'ThemeCard', 'Molécules')"
+                  :class="selectedComponent.includes('ThemeCard') ? 'bg-primary/20 text-primary border-primary/40' : 'hover:bg-dark-surface text-slate-300 border-transparent'"
+                  class="w-full text-left px-3 py-2 rounded-xl text-xs font-medium border transition">ThemeCard</button>
+          <button @click="select('./molecules/DayTab.html', 'DayTab', 'Molécules')"
+                  :class="selectedComponent.includes('DayTab') ? 'bg-primary/20 text-primary border-primary/40' : 'hover:bg-dark-surface text-slate-300 border-transparent'"
+                  class="w-full text-left px-3 py-2 rounded-xl text-xs font-medium border transition">DayTab</button>
+          <button @click="select('./molecules/AgendaItem.html', 'AgendaItem', 'Molécules')"
+                  :class="selectedComponent.includes('AgendaItem') ? 'bg-primary/20 text-primary border-primary/40' : 'hover:bg-dark-surface text-slate-300 border-transparent'"
+                  class="w-full text-left px-3 py-2 rounded-xl text-xs font-medium border transition">AgendaItem</button>
+          <button @click="select('./molecules/PillarCard.html', 'PillarCard', 'Molécules')"
+                  :class="selectedComponent.includes('PillarCard') ? 'bg-primary/20 text-primary border-primary/40' : 'hover:bg-dark-surface text-slate-300 border-transparent'"
+                  class="w-full text-left px-3 py-2 rounded-xl text-xs font-medium border transition">PillarCard</button>
+          <button @click="select('./molecules/FaqAccordionItem.html', 'FaqAccordionItem', 'Molécules')"
+                  :class="selectedComponent.includes('FaqAccordionItem') ? 'bg-primary/20 text-primary border-primary/40' : 'hover:bg-dark-surface text-slate-300 border-transparent'"
+                  class="w-full text-left px-3 py-2 rounded-xl text-xs font-medium border transition">FaqAccordionItem</button>
+          <button @click="select('./molecules/StatCounter.html', 'StatCounter', 'Molécules')"
+                  :class="selectedComponent.includes('StatCounter') ? 'bg-primary/20 text-primary border-primary/40' : 'hover:bg-dark-surface text-slate-300 border-transparent'"
+                  class="w-full text-left px-3 py-2 rounded-xl text-xs font-medium border transition">StatCounter</button>
+        </div>
+      </div>
+
+      <!-- Atoms -->
+      <div>
+        <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-2">Atomes</span>
+        <div class="space-y-1">
+          <button @click="select('./atoms/Button.html', 'Button', 'Atomes')"
+                  :class="selectedComponent.includes('Button') ? 'bg-primary/20 text-primary border-primary/40' : 'hover:bg-dark-surface text-slate-300 border-transparent'"
+                  class="w-full text-left px-3 py-2 rounded-xl text-xs font-medium border transition">Button (Variantes)</button>
+          <button @click="select('./atoms/Badge.html', 'Badge', 'Atomes')"
+                  :class="selectedComponent.includes('Badge') ? 'bg-primary/20 text-primary border-primary/40' : 'hover:bg-dark-surface text-slate-300 border-transparent'"
+                  class="w-full text-left px-3 py-2 rounded-xl text-xs font-medium border transition">Badge</button>
+          <button @click="select('./atoms/Input.html', 'Input', 'Atomes')"
+                  :class="selectedComponent.includes('Input') ? 'bg-primary/20 text-primary border-primary/40' : 'hover:bg-dark-surface text-slate-300 border-transparent'"
+                  class="w-full text-left px-3 py-2 rounded-xl text-xs font-medium border transition">Input</button>
+          <button @click="select('./atoms/IconBox.html', 'IconBox', 'Atomes')"
+                  :class="selectedComponent.includes('IconBox') ? 'bg-primary/20 text-primary border-primary/40' : 'hover:bg-dark-surface text-slate-300 border-transparent'"
+                  class="w-full text-left px-3 py-2 rounded-xl text-xs font-medium border transition">IconBox</button>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- Preview Stage with Responsive Container -->
+    <main class="flex-grow bg-[#05080f] flex items-center justify-center p-4 overflow-hidden">
+      <div class="h-full bg-[#0b101c] rounded-2xl border border-dark-border shadow-2xl overflow-hidden transition-all duration-300 flex flex-col"
+           :style="'width: ' + viewportWidth + '; max-width: 100%;'">
+        <iframe :src="selectedComponent" class="w-full h-full border-0"></iframe>
+      </div>
+    </main>
+
+  </div>
+
+</body>
+</html>
