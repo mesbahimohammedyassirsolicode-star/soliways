@@ -20,9 +20,9 @@ document.addEventListener('alpine:init', () => {
     }
   }));
 
-  // Live Event Countdown Timer (targeting 13 April 2027, 09:00:00)
+  // Live Event Countdown Timer (targeting 13 April 2027, 00:00:00 Morocco time)
   Alpine.data('countdown', () => ({
-    target: new Date('2027-04-13T09:00:00').getTime(),
+    target: Date.parse('2027-04-13T00:00:00+01:00'),
     days: '00',
     hours: '00',
     minutes: '00',
@@ -32,8 +32,22 @@ document.addEventListener('alpine:init', () => {
       setInterval(() => this.tick(), 1000);
     },
     tick() {
-      const now = new Date().getTime();
-      const diff = Math.max(0, this.target - now);
+      const now = Date.now();
+      if (isNaN(this.target)) {
+        this.days = '00';
+        this.hours = '00';
+        this.minutes = '00';
+        this.seconds = '00';
+        return;
+      }
+      const diff = this.target - now;
+      if (diff <= 0) {
+        this.days = '00';
+        this.hours = '00';
+        this.minutes = '00';
+        this.seconds = '00';
+        return;
+      }
       this.days = String(Math.floor(diff / (1000 * 60 * 60 * 24))).padStart(2, '0');
       this.hours = String(Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
       this.minutes = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
@@ -54,39 +68,6 @@ document.addEventListener('alpine:init', () => {
     activeAccordion: 1,
     toggle(id) {
       this.activeAccordion = this.activeAccordion === id ? null : id;
-    }
-  }));
-
-  // Priority Registration Notification Modal
-  Alpine.data('notificationModal', () => ({
-    open: false,
-    email: '',
-    hasError: false,
-    submitted: false,
-    errorMessage: '',
-    init() {
-      window.addEventListener('open-notify-modal', () => {
-        this.open = true;
-        this.submitted = false;
-        this.email = '';
-        this.hasError = false;
-      });
-      window.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') this.close();
-      });
-    },
-    close() {
-      this.open = false;
-    },
-    submit() {
-      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!this.email || !emailPattern.test(this.email)) {
-        this.hasError = true;
-        this.errorMessage = 'Veuillez saisir une adresse email valide.';
-        return;
-      }
-      this.hasError = false;
-      this.submitted = true;
     }
   }));
 
