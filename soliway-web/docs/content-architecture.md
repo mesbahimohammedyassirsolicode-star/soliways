@@ -89,7 +89,7 @@ H1: SOLIWAY 2027 — Apprendre. Échanger. Créer.
 ### Meta Specifications (`index.html`)
 - **Title**: `SOLIWAY 2027 | Événement IT & Hackathon Web à Tanger` (52 characters)
 - **Meta Description**: `Découvrez SOLIWAY 2027, l'événement tech de référence organisé par l'équipe SOLICODE à Tanger du 13 au 16 avril 2027 : ateliers IA, web, cybersécurité et hackathon.` (166 characters)
-- **Canonical**: `https://soliway.solicode.co/`
+- **Canonical**: `https://www.soli-ways.online/`
 - **Robots**: `index, follow`
 - **Language**: `<html lang="fr" class="scroll-smooth">`
 
