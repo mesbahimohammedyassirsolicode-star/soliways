@@ -80,10 +80,27 @@
   }
   </script>
 </head>
-<body class="bg-[#0b101c] text-slate-100 font-sans antialiased selection:bg-primary selection:text-white relative">
+<body class="bg-[#0b1323] text-slate-100 font-sans antialiased selection:bg-primary selection:text-white relative">
+
+  <!-- Shared atmospheric circuit background -->
+  <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none" aria-hidden="true">
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[750px] h-[520px] bg-primary/10 rounded-full blur-[130px]"></div>
+    <div class="absolute top-1/3 left-3/4 w-[480px] h-[420px] bg-accent/15 rounded-full blur-[110px]"></div>
+    <svg class="absolute inset-0 w-full h-full opacity-20" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="site-circuit-pattern" width="120" height="120" patternUnits="userSpaceOnUse">
+          <path d="M 0 60 L 50 60 L 60 70 L 120 70" fill="none" stroke="#65d7dd" stroke-width="0.8"/>
+          <path d="M 60 0 L 60 40 L 70 50 L 70 120" fill="none" stroke="#65d7dd" stroke-width="0.8"/>
+          <circle cx="50" cy="60" r="2.5" fill="#65d7dd"/>
+          <circle cx="70" cy="50" r="2.5" fill="#c9beff"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#site-circuit-pattern)"/>
+    </svg>
+  </div>
 
   <!-- 1. Top Navigation Bar (Navbar Organism) -->
-  <header>
+  <header class="relative z-50">
     <nav x-data="navbar"
          :class="scrolled ? 'bg-dark/95 border-b border-dark-border shadow-2xl backdrop-blur-md' : 'bg-transparent border-b border-white/5'"
          class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
@@ -149,25 +166,10 @@
   </header>
 
   <!-- 2. Main Page Content Landmarks -->
-  <main>
+  <main class="relative z-10">
 
     <!-- SECTION: Hero & Live Countdown (Hero Organism) -->
     <section id="accueil" class="relative overflow-hidden pt-32 pb-20 sm:pt-40 sm:pb-28">
-      
-      <!-- Background Ambient Glow & Cyber Grid -->
-      <div class="absolute inset-0 pointer-events-none">
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-gradient-to-tr from-primary/15 via-secondary/15 to-accent/15 blur-[120px] rounded-full opacity-60"></div>
-        <svg class="absolute top-0 left-0 w-full h-full opacity-[0.04]" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-          <defs>
-            <pattern id="circuit-pattern" width="60" height="60" patternUnits="userSpaceOnUse">
-              <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#25A6AC" stroke-width="1.2"/>
-              <circle cx="60" cy="0" r="3" fill="#25A6AC"/>
-              <circle cx="0" cy="60" r="3" fill="#456BB8"/>
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#circuit-pattern)"/>
-        </svg>
-      </div>
 
       <div class="relative max-w-7xl mx-auto px-6 sm:px-12 text-center space-y-8">
         
@@ -232,22 +234,22 @@
         </div>
 
         <!-- Key Impact Metrics Banner -->
-        <div class="pt-12 sm:pt-16 max-w-5xl mx-auto">
-          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 p-6 sm:p-8 rounded-3xl bg-dark-surface/60 border border-dark-border backdrop-blur">
-            <div class="text-center p-3">
-              <div class="font-heading font-black text-3xl sm:text-4xl text-white tracking-tight">+1000</div>
+        <div class="pt-12 sm:pt-16 max-w-6xl mx-auto">
+          <div class="grid grid-cols-2 xl:grid-cols-4 p-4 sm:p-6 lg:p-8 rounded-3xl bg-dark-surface/60 border border-dark-border backdrop-blur">
+            <div class="text-center p-3 sm:p-5">
+              <div class="font-heading font-black text-2xl sm:text-3xl text-white tracking-tight">+1000</div>
               <div class="text-xs font-medium uppercase tracking-wider text-slate-400 mt-1">Participants</div>
             </div>
-            <div class="text-center p-3 border-l border-dark-border/60">
-              <div class="font-heading font-black text-3xl sm:text-4xl text-primary tracking-tight">4 Jours</div>
+            <div class="text-center p-3 sm:p-5 border-l border-dark-border/60">
+              <div class="font-heading font-black text-2xl sm:text-3xl text-primary tracking-tight">4 Jours</div>
               <div class="text-xs font-medium uppercase tracking-wider text-slate-400 mt-1">Immersion Totale</div>
             </div>
-            <div class="text-center p-3 border-l border-dark-border/60">
-              <div class="font-heading font-black text-3xl sm:text-4xl text-secondary tracking-tight">5 Thèmes</div>
+            <div class="text-center p-3 sm:p-5 border-t border-dark-border/60 xl:border-t-0 xl:border-l">
+              <div class="font-heading font-black text-2xl sm:text-3xl text-secondary tracking-tight">5 Thèmes</div>
               <div class="text-xs font-medium uppercase tracking-wider text-slate-400 mt-1">Ateliers & Tech</div>
             </div>
-            <div class="text-center p-3 border-l border-dark-border/60">
-              <div class="font-heading font-black text-3xl sm:text-4xl text-accent tracking-tight">1 Hackathon</div>
+            <div class="text-center p-3 sm:p-5 border-t border-l border-dark-border/60 xl:border-t-0">
+              <div class="font-heading font-black text-2xl sm:text-3xl text-accent tracking-tight">1 Hackathon</div>
               <div class="text-xs font-medium uppercase tracking-wider text-slate-400 mt-1">Développement Web</div>
             </div>
           </div>
@@ -343,7 +345,7 @@
     </section>
 
     <!-- SECTION: Programme (ProgramSection Organism) -->
-    <section id="programme" class="py-20 sm:py-28 relative bg-[#0d1424]" x-data="programTabs">
+    <section id="programme" class="py-20 sm:py-28 relative bg-[#0d1424]/75" x-data="programTabs">
       <div class="max-w-7xl mx-auto px-6 sm:px-12 space-y-12">
         
         <!-- Section Header -->
@@ -657,7 +659,7 @@
     </section>
 
     <!-- SECTION: L'équipe (TeamSection Organism) -->
-    <section id="equipe" class="py-20 sm:py-28 relative bg-[#0d1424]">
+    <section id="equipe" class="py-20 sm:py-28 relative bg-[#0d1424]/75">
       <div class="max-w-7xl mx-auto px-6 sm:px-12">
         
         <div class="relative bg-gradient-to-br from-dark-surface via-dark to-[#121c30] border border-dark-border rounded-3xl p-8 sm:p-14 overflow-hidden shadow-2xl">
@@ -739,7 +741,7 @@
     </section>
 
     <!-- SECTION: Infos Pratiques & FAQ (PracticalFaqSection Organism) -->
-    <section id="pratique" class="py-20 sm:py-28 relative bg-[#0d1424]">
+    <section id="pratique" class="py-20 sm:py-28 relative bg-[#0d1424]/75">
       <div class="max-w-7xl mx-auto px-6 sm:px-12 space-y-16">
         
         <!-- Section Header -->
@@ -855,7 +857,7 @@
   </main>
 
   <!-- 3. Site Footer (Footer Organism) -->
-  <footer class="border-t border-dark-border bg-dark/95 relative overflow-hidden">
+  <footer class="border-t border-dark-border bg-dark/85 relative z-10 overflow-hidden">
     <div class="max-w-7xl mx-auto px-6 sm:px-12 py-16 space-y-12">
       
       <!-- Top Row -->
@@ -914,7 +916,7 @@
   </footer>
 
   <!-- 4. Notification Modal (NotificationModal Organism) -->
-  <div x-data="notificationModal">
+  <div x-data="notificationModal" class="relative z-50">
     <div x-cloak x-show="open"
          x-transition:enter="transition ease-out duration-300"
          x-transition:enter-start="opacity-0"
