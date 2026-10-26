@@ -1,3 +1,0 @@
-# Copy to <project>/frontend/ui-kit/components-manifest.yaml
-# status flow: pending -> built (agent) -> validated (user GO only)
-components: []
