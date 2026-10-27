@@ -85,3 +85,48 @@ document.addEventListener('alpine:init', () => {
   }));
 
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const counters = document.querySelectorAll('[data-count-up]');
+  if (!counters.length || !('IntersectionObserver' in window)) return;
+
+  const formatter = new Intl.NumberFormat(document.documentElement.lang || undefined);
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+
+      const counter = entry.target;
+      observer.unobserve(counter);
+
+      const target = Number(counter.dataset.countUp);
+      if (!Number.isFinite(target)) return;
+
+      const prefix = counter.dataset.countPrefix || '';
+      const suffix = counter.dataset.countSuffix || '';
+      const render = (value) => {
+        counter.textContent = `${prefix}${formatter.format(value)}${suffix}`;
+      };
+
+      if (reducedMotion) {
+        render(target);
+        return;
+      }
+
+      const duration = 1400;
+      const start = performance.now();
+      const animate = (now) => {
+        const progress = Math.min((now - start) / duration, 1);
+        const easedProgress = 1 - Math.pow(1 - progress, 3);
+        render(Math.floor(target * easedProgress));
+
+        if (progress < 1) requestAnimationFrame(animate);
+      };
+
+      requestAnimationFrame(animate);
+    });
+  }, { threshold: 0.3 });
+
+  counters.forEach((counter) => observer.observe(counter));
+});
