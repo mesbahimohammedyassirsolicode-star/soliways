@@ -198,6 +198,26 @@
             <span>About SOLIWAYS</span>
           </a>
         </div>
+        <div class="pt-12 sm:pt-16 max-w-6xl mx-auto">
+          <div class="grid grid-cols-2 xl:grid-cols-4 p-4 sm:p-6 lg:p-8 rounded-3xl bg-dark-surface/60 border border-dark-border backdrop-blur">
+            <div class="text-center p-3 sm:p-5">
+              <div class="font-heading font-black text-2xl sm:text-3xl text-white tracking-tight" data-count-up="1000" data-count-prefix="+">+1000</div>
+              <div class="text-xs font-medium uppercase tracking-wider text-slate-400 mt-1">Participants</div>
+            </div>
+            <div class="text-center p-3 sm:p-5 border-l border-dark-border/60">
+              <div class="font-heading font-black text-2xl sm:text-3xl text-primary tracking-tight" data-count-up="4" data-count-suffix=" Days">4 Days</div>
+              <div class="text-xs font-medium uppercase tracking-wider text-slate-400 mt-1">Full immersion</div>
+            </div>
+            <div class="text-center p-3 sm:p-5 border-t border-dark-border/60 xl:border-t-0 xl:border-l">
+              <div class="font-heading font-black text-2xl sm:text-3xl text-secondary tracking-tight" data-count-up="5" data-count-suffix=" Themes">5 Themes</div>
+              <div class="text-xs font-medium uppercase tracking-wider text-slate-400 mt-1">Workshops & Tech</div>
+            </div>
+            <div class="text-center p-3 sm:p-5 border-t border-l border-dark-border/60 xl:border-t-0">
+              <div class="font-heading font-black text-2xl sm:text-3xl text-accent tracking-tight" data-count-up="1" data-count-suffix=" Hackathon">1 Hackathon</div>
+              <div class="text-xs font-medium uppercase tracking-wider text-slate-400 mt-1">Web development</div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -252,15 +272,75 @@
       </div>
     </section>
 
-    <section id="program" class="py-20 sm:py-28 relative bg-[#0d1424]/75">
+    <section id="program" class="py-20 sm:py-28 relative bg-[#0d1424]/75" x-data="programTabs">
       <div class="max-w-7xl mx-auto px-6 sm:px-12 space-y-12">
         <div class="text-center max-w-3xl mx-auto space-y-4">
           <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-secondary/15 text-secondary border border-secondary/30 uppercase tracking-widest">Official Program</div>
-          <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">Four days of <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent">tech immersion</span></h2>
-          <p class="text-slate-300 text-base sm:text-lg">Discover the full schedule at SOLICODE Tangier, April 13–16, 2027.</p>
+          <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">Four days of <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent">technological immersion</span></h2>
+          <p class="text-slate-300 text-base sm:text-lg">Discover the four-day schedule at SOLICODE in Tangier, April 13–16, 2027.</p>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-4xl mx-auto">
+          <button @click="setDay(1)" :class="activeDay === 1 ? 'bg-primary text-white shadow-glow-primary border-primary' : 'bg-dark hover:bg-dark-surface text-slate-400 border-dark-border'" class="p-4 rounded-2xl border text-left transition-all duration-200">
+            <span class="block text-[11px] font-bold uppercase tracking-wider opacity-90">Day 1</span><span class="block text-base font-heading font-extrabold mt-0.5">April 13</span><span class="block text-xs truncate opacity-80 mt-1">Opening & Workshops</span>
+          </button>
+          <button @click="setDay(2)" :class="activeDay === 2 ? 'bg-primary text-white shadow-glow-primary border-primary' : 'bg-dark hover:bg-dark-surface text-slate-400 border-dark-border'" class="p-4 rounded-2xl border text-left transition-all duration-200">
+            <span class="block text-[11px] font-bold uppercase tracking-wider opacity-90">Day 2</span><span class="block text-base font-heading font-extrabold mt-0.5">April 14</span><span class="block text-xs truncate opacity-80 mt-1">Themed Workshops</span>
+          </button>
+          <button @click="setDay(3)" :class="activeDay === 3 ? 'bg-primary text-white shadow-glow-primary border-primary' : 'bg-dark hover:bg-dark-surface text-slate-400 border-dark-border'" class="p-4 rounded-2xl border text-left transition-all duration-200">
+            <span class="block text-[11px] font-bold uppercase tracking-wider opacity-90">Day 3</span><span class="block text-base font-heading font-extrabold mt-0.5">April 15</span><span class="block text-xs truncate opacity-80 mt-1">Forum & Speakers</span>
+          </button>
+          <button @click="setDay(4)" :class="activeDay === 4 ? 'bg-primary text-white shadow-glow-primary border-primary' : 'bg-dark hover:bg-dark-surface text-slate-400 border-dark-border'" class="p-4 rounded-2xl border text-left transition-all duration-200">
+            <span class="block text-[11px] font-bold uppercase tracking-wider opacity-90">Day 4</span><span class="block text-base font-heading font-extrabold mt-0.5">April 16</span><span class="block text-xs truncate opacity-80 mt-1">Web Hackathon</span>
+          </button>
+        </div>
+        <div class="max-w-4xl mx-auto bg-dark-surface border border-dark-border rounded-3xl p-6 sm:p-10 shadow-card-dark">
+          <div x-show="activeDay === 1" x-transition.opacity.duration.300ms class="space-y-6">
+            <div class="flex items-center justify-between border-b border-dark-border pb-4">
+              <div><span class="text-xs font-mono uppercase tracking-wider text-primary font-semibold">April 13, 2027</span><h3 class="font-heading text-2xl font-bold text-white mt-0.5">Opening and digital workshops</h3></div>
+              <span class="px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary border border-primary/20">Day 1</span>
+            </div>
+            <div class="space-y-6 pt-2">
+              <div class="pl-6 border-l-2 border-primary space-y-1 relative"><span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-dark border-2 border-primary"></span><span class="text-xs font-semibold text-primary">Opening ceremony</span><h4 class="font-heading font-bold text-lg text-white">Official launch of SOLIWAYS 2027</h4><p class="text-slate-400 text-sm leading-relaxed">Welcoming participants, introducing the event with the SOLIWAYS team, and launching four days of immersion.</p></div>
+              <div class="pl-6 border-l-2 border-dark-border space-y-1 relative"><span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-dark border-2 border-secondary"></span><span class="text-xs font-semibold text-secondary">Introductory workshops</span><h4 class="font-heading font-bold text-lg text-white">Discovering key areas of the digital world</h4><p class="text-slate-400 text-sm leading-relaxed">Interactive sessions covering coding fundamentals, digital tools, and sharing technology experiences.</p></div>
+            </div>
+          </div>
+          <div x-cloak x-show="activeDay === 2" x-transition.opacity.duration.300ms class="space-y-6">
+            <div class="flex items-center justify-between border-b border-dark-border pb-4">
+              <div><span class="text-xs font-mono uppercase tracking-wider text-secondary font-semibold">April 14, 2027</span><h3 class="font-heading text-2xl font-bold text-white mt-0.5">In-depth themed workshops</h3></div>
+              <span class="px-3 py-1 rounded-full text-xs font-semibold bg-secondary/15 text-secondary border border-secondary/30">Day 2</span>
+            </div>
+            <p class="text-slate-300 text-sm leading-relaxed">A day dedicated to discovering and exploring the areas featured at SOLIWAYS:</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+              <div class="p-4 rounded-2xl bg-dark border border-dark-border space-y-1"><span class="text-xs font-bold text-primary">Workshop 1</span><h4 class="font-heading font-bold text-white text-base">Web Development & Architecture</h4><p class="text-slate-400 text-xs">Building modern components and discovering current web standards.</p></div>
+              <div class="p-4 rounded-2xl bg-dark border border-dark-border space-y-1"><span class="text-xs font-bold text-secondary">Workshop 2</span><h4 class="font-heading font-bold text-white text-base">Generative AI & Prompting Techniques</h4><p class="text-slate-400 text-xs">Writing effective prompts and automating tasks with AI tools.</p></div>
+              <div class="p-4 rounded-2xl bg-dark border border-dark-border space-y-1"><span class="text-xs font-bold text-accent">Workshop 3</span><h4 class="font-heading font-bold text-white text-base">Cybersecurity & Data Protection</h4><p class="text-slate-400 text-xs">Understanding digital security challenges and web vulnerabilities.</p></div>
+              <div class="p-4 rounded-2xl bg-dark border border-dark-border space-y-1"><span class="text-xs font-bold text-emerald-400">Workshop 4</span><h4 class="font-heading font-bold text-white text-base">Digital Marketing & IT Freelancing</h4><p class="text-slate-400 text-xs">Online visibility strategies and the fundamentals of independent work.</p></div>
+            </div>
+          </div>
+          <div x-cloak x-show="activeDay === 3" x-transition.opacity.duration.300ms class="space-y-6">
+            <div class="flex items-center justify-between border-b border-dark-border pb-4">
+              <div><span class="text-xs font-mono uppercase tracking-wider text-accent font-semibold">April 15, 2027</span><h3 class="font-heading text-2xl font-bold text-white mt-0.5">Forum, meetups, and speakers</h3></div>
+              <span class="px-3 py-1 rounded-full text-xs font-semibold bg-accent/15 text-accent border border-accent/30">Day 3</span>
+            </div>
+            <div class="space-y-6 pt-2">
+              <div class="pl-6 border-l-2 border-accent space-y-1 relative"><span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-dark border-2 border-accent"></span><span class="text-xs font-semibold text-accent">Forum & Meetups</span><h4 class="font-heading font-bold text-lg text-white">Networking and project discovery</h4><p class="text-slate-400 text-sm leading-relaxed">A day for conversation and sharing experiences among technology enthusiasts, learners, and industry professionals.</p></div>
+              <div class="pl-6 border-l-2 border-dark-border space-y-1 relative"><span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-dark border-2 border-primary"></span><span class="text-xs font-semibold text-primary">Expert talks</span><h4 class="font-heading font-bold text-lg text-white">Talks on Artificial Intelligence & Cybersecurity</h4><p class="text-slate-400 text-sm leading-relaxed">Inspiring insights into AI advances and cybersecurity best practices.</p></div>
+            </div>
+          </div>
+          <div x-cloak x-show="activeDay === 4" x-transition.opacity.duration.300ms class="space-y-6">
+            <div class="flex items-center justify-between border-b border-dark-border pb-4">
+              <div><span class="text-xs font-mono uppercase tracking-wider text-primary font-semibold">April 16, 2027</span><h3 class="font-heading text-2xl font-bold text-white mt-0.5">Web development hackathon</h3></div>
+              <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">Day 4 • Practical Challenge</span>
+            </div>
+            <div class="p-6 rounded-2xl bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10 border border-primary/30 space-y-3">
+              <div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-primary animate-pulse"></span><span class="font-heading font-bold text-white text-lg">Team Web Challenge</span></div>
+              <p class="text-slate-300 text-sm leading-relaxed">A full day focused on hands-on work, collaboration, and building practical web projects as part of the SOLIWAYS hackathon.</p>
+              <div class="pt-2 flex flex-wrap gap-2 text-xs font-semibold text-primary"><span class="px-2.5 py-1 rounded bg-dark border border-primary/20">Ideation</span><span class="px-2.5 py-1 rounded bg-dark border border-primary/20">Development</span><span class="px-2.5 py-1 rounded bg-dark border border-primary/20">Presentation & Jury</span></div>
+            </div>
+          </div>
         </div>
         <div class="max-w-4xl mx-auto p-4 rounded-2xl bg-dark/50 border border-dark-border text-center text-xs text-slate-400">
-          <span class="font-semibold text-slate-300">Note:</span> The schedule below is the proposed official program. The organization will confirm the final program closer to the event.
+          <span class="font-semibold text-slate-300">Organizational note:</span> This schedule is the proposed official program. The organization will confirm the final schedule closer to the event.
         </div>
       </div>
     </section>
@@ -271,6 +351,33 @@
           <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-primary/10 text-primary border border-primary/20 uppercase tracking-widest">Exploration Areas</div>
           <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">Themes at the <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-300">heart of the event</span></h2>
           <p class="text-slate-300 text-base sm:text-lg">These themes are central to workshops and activities at SOLIWAYS.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div class="bg-gradient-to-b from-dark-surface to-dark border border-dark-border rounded-3xl p-6 sm:p-8 space-y-4 hover:border-primary/50 transition duration-300 group shadow-card-dark hover:-translate-y-1">
+            <div class="flex items-center justify-between"><div class="w-12 h-12 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:scale-110 group-hover:shadow-glow-primary transition duration-300"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg></div><span class="text-xs font-mono text-primary font-bold">01</span></div>
+            <h3 class="font-heading text-xl font-bold text-white group-hover:text-primary transition duration-200">Web development</h3><p class="text-slate-400 text-sm leading-relaxed">Discover how websites and web applications are built, and explore the possibilities of modern digital development.</p>
+            <div class="pt-2 flex items-center text-xs font-semibold text-primary gap-1"><span>Workshops & Hackathon</span><svg class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></div>
+          </div>
+          <div class="bg-gradient-to-b from-dark-surface to-dark border border-dark-border rounded-3xl p-6 sm:p-8 space-y-4 hover:border-secondary/50 transition duration-300 group shadow-card-dark hover:-translate-y-1">
+            <div class="flex items-center justify-between"><div class="w-12 h-12 rounded-2xl bg-secondary/10 border border-secondary/20 flex items-center justify-center text-secondary group-hover:scale-110 transition duration-300"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div><span class="text-xs font-mono text-secondary font-bold">02</span></div>
+            <h3 class="font-heading text-xl font-bold text-white group-hover:text-secondary transition duration-200">Artificial Intelligence & Prompting</h3><p class="text-slate-400 text-sm leading-relaxed">Explore AI applications and prompt-writing techniques to work effectively with AI tools.</p>
+            <div class="pt-2 flex items-center text-xs font-semibold text-secondary gap-1"><span>Workshops & Talks</span><svg class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></div>
+          </div>
+          <div class="bg-gradient-to-b from-dark-surface to-dark border border-dark-border rounded-3xl p-6 sm:p-8 space-y-4 hover:border-accent/50 transition duration-300 group shadow-card-dark hover:-translate-y-1">
+            <div class="flex items-center justify-between"><div class="w-12 h-12 rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent group-hover:scale-110 transition duration-300"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg></div><span class="text-xs font-mono text-accent font-bold">03</span></div>
+            <h3 class="font-heading text-xl font-bold text-white group-hover:text-accent transition duration-200">Cybersecurity</h3><p class="text-slate-400 text-sm leading-relaxed">Understand the key challenges of digital security and protecting systems, networks, and sensitive data.</p>
+            <div class="pt-2 flex items-center text-xs font-semibold text-accent gap-1"><span>Defense & Protection</span><svg class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></div>
+          </div>
+          <div class="bg-gradient-to-b from-dark-surface to-dark border border-dark-border rounded-3xl p-6 sm:p-8 space-y-4 hover:border-emerald-500/50 transition duration-300 group shadow-card-dark hover:-translate-y-1">
+            <div class="flex items-center justify-between"><div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 group-hover:scale-110 transition duration-300"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"/></svg></div><span class="text-xs font-mono text-emerald-400 font-bold">04</span></div>
+            <h3 class="font-heading text-xl font-bold text-white group-hover:text-emerald-400 transition duration-200">Digital marketing</h3><p class="text-slate-400 text-sm leading-relaxed">Discover digital communication channels and best practices for building a strong online presence.</p>
+            <div class="pt-2 flex items-center text-xs font-semibold text-emerald-400 gap-1"><span>Strategy & Visibility</span><svg class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></div>
+          </div>
+          <div class="bg-gradient-to-b from-dark-surface to-dark border border-dark-border rounded-3xl p-6 sm:p-8 space-y-4 hover:border-amber-500/50 transition duration-300 group shadow-card-dark hover:-translate-y-1 md:col-span-2 lg:col-span-2">
+            <div class="flex items-center justify-between"><div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 group-hover:scale-110 transition duration-300"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div><span class="text-xs font-mono text-amber-400 font-bold">05</span></div>
+            <h3 class="font-heading text-xl font-bold text-white group-hover:text-amber-400 transition duration-200">IT Freelancing & Entrepreneurship</h3><p class="text-slate-400 text-sm leading-relaxed">Explore independent work, client management, and the different aspects of building a sustainable career in the digital sector.</p>
+            <div class="pt-2 flex items-center text-xs font-semibold text-amber-400 gap-1"><span>Careers & Independence</span><svg class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></div>
+          </div>
         </div>
       </div>
     </section>
@@ -374,7 +481,7 @@
               <div class="pt-3 flex justify-between items-start"><span class="text-slate-400">Organization</span><span class="font-semibold text-white text-right">SOLIWAYS</span></div>
               <div class="pt-3 flex justify-between items-start"><span class="text-slate-400">Dates</span><span class="font-semibold text-primary text-right">April 13–16, 2027</span></div>
               <div class="pt-3 flex justify-between items-start"><span class="text-slate-400">Location</span><span class="font-semibold text-white text-right">SOLICODE, Tangier, Morocco</span></div>
-              <div class="pt-3 flex justify-between items-start"><span class="text-slate-400">Audience</span><span class="font-semibold text-white text-right">General public</span></div>
+              <div class="pt-3 flex justify-between items-start"><span class="text-slate-400">Audience</span><span class="font-semibold text-white text-right">General public & IT students</span></div>
               <div class="pt-3 flex justify-between items-start"><span class="text-slate-400">Registration</span><span class="font-semibold text-amber-400 text-right">Coming soon</span></div>
             </div>
             <div class="pt-4 border-t border-dark-border space-y-2">
@@ -404,6 +511,17 @@
                 <svg class="w-5 h-5 text-primary transform transition-transform duration-300" :class="activeAccordion === 2 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
               </button>
               <div x-cloak x-show="activeAccordion === 2" x-collapse id="en-faq-panel-2" role="region" aria-labelledby="en-faq-trigger-2" class="px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-dark-border/50 pt-3">The registration link will be available closer to the event on this page.</div>
+            </div>
+            <div class="bg-dark-surface border border-dark-border rounded-2xl overflow-hidden transition">
+              <button @click="toggle(3)"
+                      :aria-expanded="activeAccordion === 3 ? 'true' : 'false'"
+                      aria-controls="en-faq-panel-3"
+                      id="en-faq-trigger-3"
+                      class="w-full p-5 text-left flex items-center justify-between gap-4 font-heading font-semibold text-white hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/70 focus-visible:ring-offset-2 focus-visible:ring-offset-dark transition">
+                <span>What is planned for the Day 4 hackathon?</span>
+                <svg class="w-5 h-5 text-primary transform transition-transform duration-300" :class="activeAccordion === 3 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </button>
+              <div x-cloak x-show="activeAccordion === 3" x-collapse id="en-faq-panel-3" role="region" aria-labelledby="en-faq-trigger-3" class="px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-dark-border/50 pt-3">Day 4 (April 16, 2027) is dedicated to teamwork and building web prototypes in groups, with support from mentors and evaluation by a technical jury.</div>
             </div>
           </div>
         </div>
@@ -451,9 +569,9 @@
         </div>
       </div>
       <div class="pt-8 border-t border-dark-border flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-        <br>© 2027 SOLIWAYS — Organized by SOLIWAYS. All rights reserved.
-          <br>Powerd by Aura-Soli Team</br>
-
+        <div>
+          © 2027 SOLIWAYS — Organized by SOLIWAYS. All rights reserved.
+          <br>Powered by Aura-Soli Team
         </div>
         <div class="flex items-center gap-6">
           <a href="#home" class="hover:text-slate-300 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/70 focus-visible:rounded">Back to top ↑</a>
