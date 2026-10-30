@@ -10,36 +10,39 @@
   <title>SOLIWAYS 2027 | Événement IT & Hackathon Web à Tanger</title>
   <meta name="title" content="SOLIWAYS 2027 | Événement IT & Hackathon Web à Tanger">
   <meta name="description" content="Découvrez SOLIWAYS 2027, l'événement tech organisé par SOLIWAYS à Tanger du 13 au 16 avril 2027 : ateliers IA, web, cybersécurité et hackathon.">
-  <meta name="keywords" content="SOLIWAYS, SOLIWAYS 2027, événement IT Tanger, développement web, intelligence artificielle, cybersécurité, marketing digital, freelance, hackathon web, SOLICODE Tanger">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://www.soli-ways.online/">
+  <link rel="canonical" href="https://soli-ways.online/">
 <meta name="google-site-verification" content="vLV7cP3GHUuPS5TgNcZ9sLpUBjhlj40VXauA5H2vBMw" />
-  <!-- Favicon -->
+  <!-- Favicon & mobile -->
   <link rel="icon" type="image/png" href="/assets/img/logo-s.png">
   <link rel="apple-touch-icon" href="/assets/img/logo-s.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0b1323">
 
   <!-- Hreflang -->
-  <link rel="alternate" hreflang="fr" href="https://www.soli-ways.online/">
-  <link rel="alternate" hreflang="en" href="https://www.soli-ways.online/en.html">
-  <link rel="alternate" hreflang="x-default" href="https://www.soli-ways.online/">
+  <link rel="alternate" hreflang="fr" href="https://soli-ways.online/">
+  <link rel="alternate" hreflang="en" href="https://soli-ways.online/en">
+  <link rel="alternate" hreflang="x-default" href="https://soli-ways.online/">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.soli-ways.online/">
+  <meta property="og:url" content="https://soli-ways.online/">
   <meta property="og:title" content="SOLIWAYS 2027 | Événement IT & Hackathon Web à Tanger">
   <meta property="og:description" content="Quatre jours pour explorer les technologies numériques, partager des expériences et donner vie à des idées du 13 au 16 avril 2027 chez SOLICODE à Tanger.">
-  <meta property="og:image" content="https://www.soli-ways.online/assets/img/og-soliways-2027.svg">
+  <meta property="og:image" content="https://soli-ways.online/assets/img/og-soliways-2027.png">
+  <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="SOLIWAYS 2027 - Événement IT & Hackathon Web à Tanger, 13-16 Avril 2027">
   <meta property="og:site_name" content="SOLIWAYS 2027">
   <meta property="og:locale" content="fr_FR">
+  <meta property="og:locale:alternate" content="en_US">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="SOLIWAYS 2027 | Événement IT & Hackathon Web à Tanger">
   <meta name="twitter:description" content="Quatre jours pour explorer les technologies numériques, partager des expériences et donner vie à des idées du 13 au 16 avril 2027 chez SOLICODE à Tanger.">
-  <meta name="twitter:image" content="https://www.soli-ways.online/assets/img/og-soliways-2027.svg">
+  <meta name="twitter:image" content="https://soli-ways.online/assets/img/og-soliways-2027.png">
   <meta name="twitter:image:alt" content="SOLIWAYS 2027 - Événement IT & Hackathon Web à Tanger, 13-16 Avril 2027">
 
   <!-- Google Fonts: Inter (headings) & Manrope (body) -->
@@ -53,33 +56,137 @@
   <!-- Alpine.js Application Logic -->
   <script defer src="/assets/js/app.js"></script>
   <!-- Alpine.js Core (Pinned to v3) -->
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.3/dist/cdn.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.3/dist/cdn.min.js" integrity="sha384-iZD2X8o1Zdq0HR5H/7oa8W30WS4No+zWCKUPD7fHRay9I1Gf+C4F8sVmw7zec1wW" crossorigin="anonymous"></script>
 
-  <!-- Schema.org Event JSON-LD Structured Data -->
+  <!-- Schema.org structured data: Organization, WebSite, WebPage, Event, FAQPage -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Event",
-    "name": "SOLIWAYS 2027",
-    "description": "Quatre jours pour explorer les technologies numériques, partager des expériences et donner vie à des idées. Événement organisé par SOLIWAYS.",
-    "startDate": "2027-04-13T09:00:00+01:00",
-    "endDate": "2027-04-16T18:00:00+01:00",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-    "location": {
-      "@type": "Place",
-      "name": "SOLICODE, Tangier, Morocco",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Tanger",
-        "addressCountry": "MA"
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://soli-ways.online/#organization",
+        "name": "SOLIWAYS",
+        "alternateName": "SOLIWAYS 2027",
+        "url": "https://soli-ways.online/",
+        "description": "SOLIWAYS organise SOLIWAYS 2027, un événement consacré à l'informatique, aux technologies numériques et au partage de connaissances à Tanger, au Maroc.",
+        "email": "soli-ways@soli-ways.online",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://soli-ways.online/assets/img/logo.png",
+          "width": 1024,
+          "height": 1024
+        },
+        "sameAs": [
+          "https://www.instagram.com/soli_ways/"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://soli-ways.online/#website",
+        "url": "https://soli-ways.online/",
+        "name": "SOLIWAYS 2027",
+        "description": "Site officiel de SOLIWAYS 2027, événement IT et hackathon web à Tanger.",
+        "inLanguage": ["fr", "en"],
+        "publisher": {
+          "@id": "https://soli-ways.online/#organization"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://soli-ways.online/#webpage",
+        "url": "https://soli-ways.online/",
+        "name": "SOLIWAYS 2027 | Événement IT & Hackathon Web à Tanger",
+        "description": "Découvrez SOLIWAYS 2027, l'événement tech organisé par SOLIWAYS à Tanger du 13 au 16 avril 2027 : ateliers IA, web, cybersécurité et hackathon.",
+        "isPartOf": {
+          "@id": "https://soli-ways.online/#website"
+        },
+        "about": {
+          "@id": "https://soli-ways.online/#event"
+        },
+        "primaryImageOfPage": {
+          "@id": "https://soli-ways.online/#primaryimage"
+        },
+        "inLanguage": "fr"
+      },
+      {
+        "@type": "ImageObject",
+        "@id": "https://soli-ways.online/#primaryimage",
+        "url": "https://soli-ways.online/assets/img/og-soliways-2027.png",
+        "width": 1200,
+        "height": 630,
+        "caption": "SOLIWAYS 2027 - Événement IT & Hackathon Web à Tanger, 13-16 avril 2027"
+      },
+      {
+        "@type": "Event",
+        "@id": "https://soli-ways.online/#event",
+        "name": "SOLIWAYS 2027",
+        "url": "https://soli-ways.online/",
+        "description": "Quatre jours pour explorer les technologies numériques, partager des expériences et donner vie à des idées. Événement organisé par SOLIWAYS.",
+        "startDate": "2027-04-13T09:00:00+01:00",
+        "endDate": "2027-04-16T18:00:00+01:00",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "image": [
+          "https://soli-ways.online/assets/img/og-soliways-2027.png"
+        ],
+        "location": {
+          "@type": "Place",
+          "name": "SOLICODE",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Tanger",
+            "addressCountry": "MA"
+          }
+        },
+        "organizer": {
+          "@id": "https://soli-ways.online/#organization"
+        },
+        "inLanguage": ["fr", "en"]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://soli-ways.online/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Qui peut participer aux activités de SOLIWAYS ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "L'événement s'adresse au grand public : lycéens, étudiants, débutants curieux, passionnés de technologie, développeurs et freelances souhaitant découvrir ou approfondir les domaines du digital."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Comment s'inscrire aux ateliers et au Hackathon ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Le lien de la billetterie et des inscriptions aux différentes sessions sera disponible à l'approche de l'événement sur cette page."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quel est le programme du Hackathon de la 4ème journée ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La 4ème journée (16 avril 2027) est entièrement consacrée à la collaboration et au développement de prototypes web par équipes, avec accompagnement par des mentors et évaluation par un jury technique."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://soli-ways.online/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Accueil",
+            "item": "https://soli-ways.online/"
+          }
+        ]
       }
-    },
-    "organizer": {
-      "@type": "Organization",
-      "name": "SOLIWAYS",
-      "url": "https://www.soli-ways.online/"
-    }
+    ]
   }
   </script>
   <!-- Google tag (gtag.js) -->
@@ -120,7 +227,7 @@
         
         <!-- Official Logo Brand -->
         <a href="#accueil" class="flex items-center gap-3 group" aria-label="Retour à l'accueil SOLIWAYS 2027">
-          <img src="/assets/img/logo-nav-dark.png" alt="Soliways Logo" class="h-10 w-auto group-hover:scale-105 transition duration-300 drop-shadow-[0_0_12px_rgba(37,166,172,0.4)]">
+          <img src="/assets/img/logo-nav-dark.png" alt="Logo SOLIWAYS" width="193" height="48" class="h-10 w-auto group-hover:scale-105 transition duration-300 drop-shadow-[0_0_12px_rgba(37,166,172,0.4)]">
         </a>
 
         <!-- Desktop Navigation Links -->
@@ -134,7 +241,7 @@
           <a href="#partenaires" class="hover:text-primary transition duration-200">Partenaires</a>
           <a href="/" class="hover:text-primary transition" aria-label="Français">FR</a>
           <span class="text-slate-600">|</span>
-          <a href="/en.html" class="hover:text-primary transition" aria-label="English">EN</a>
+          <a href="en.html" class="hover:text-primary transition" aria-label="English">EN</a>
         </div>
 
         <!-- Action Button & Mobile Toggle -->
@@ -172,7 +279,7 @@
           <a @click="closeMobile()" href="#thematiques" class="px-3 py-2 rounded-lg hover:bg-dark-surface text-slate-200 hover:text-primary">Thématiques</a>
           <a @click="closeMobile()" href="#equipe" class="px-3 py-2 rounded-lg hover:bg-dark-surface text-slate-200 hover:text-primary">Équipe</a>
           <a @click="closeMobile()" href="#pratique" class="px-3 py-2 rounded-lg hover:bg-dark-surface text-slate-200 hover:text-primary">Infos pratiques</a>
-          <a @click="closeMobile()" href="/en.html" class="px-3 py-2 rounded-lg hover:bg-dark-surface text-slate-200 hover:text-primary">English</a>
+          <a @click="closeMobile()" href="/en" class="px-3 py-2 rounded-lg hover:bg-dark-surface text-slate-200 hover:text-primary">English</a>
         </div>
         <div class="pt-2 border-t border-dark-border">
           <a @click="closeMobile()" href="#inscriptions" class="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-heading font-semibold text-sm text-white bg-primary hover:bg-primary-hover shadow-glow-primary">
@@ -348,7 +455,10 @@
 
             <div class="relative z-10 text-center py-6 space-y-3">
               <div class="inline-block p-6 rounded-3xl bg-dark/90 border border-primary/30 shadow-glow-primary group-hover:scale-105 transition duration-300">
-                <img src="/assets/img/logo-darkmode.png" alt="Soliways Official Logo" class="h-44 w-auto mx-auto object-contain drop-shadow-[0_0_20px_rgba(37,166,172,0.45)]">
+                <picture>
+                  <source srcset="/assets/img/logo-darkmode.webp" type="image/webp">
+                  <img src="/assets/img/logo-darkmode.png" alt="Logo officiel SOLIWAYS" width="386" height="730" class="h-44 w-auto mx-auto object-contain drop-shadow-[0_0_20px_rgba(37,166,172,0.45)]">
+                </picture>
               </div>
             </div>
 
@@ -723,16 +833,25 @@
         </div>
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
           <figure class="lg:col-span-7 rounded-3xl overflow-hidden border border-dark-border shadow-card-dark relative group h-full">
-            <img src="/assets/img/soliH1%20(2).jfif" alt="Remise de prix et de certificats lors d'une cérémonie de SOLIWAYS" loading="lazy" decoding="async" class="w-full h-full min-h-[280px] sm:min-h-[420px] lg:min-h-[520px] object-cover group-hover:scale-[1.02] transition duration-500">
+            <picture class="block w-full h-full">
+              <source srcset="/assets/img/gallery-1.webp" type="image/webp">
+              <img src="/assets/img/soliH1%20(2).jfif" alt="Remise de prix et de certificats lors d'une cérémonie de SOLIWAYS" width="1031" height="864" loading="lazy" decoding="async" class="w-full h-full min-h-[280px] sm:min-h-[420px] lg:min-h-[520px] object-cover group-hover:scale-[1.02] transition duration-500">
+            </picture>
             <figcaption class="absolute bottom-0 left-0 right-0 px-4 py-3 bg-gradient-to-t from-black/85 to-transparent text-xs text-slate-300">Cérémonie de remise des prix – Édition précédente</figcaption>
           </figure>
           <div class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6 h-full">
             <figure class="rounded-3xl overflow-hidden border border-dark-border shadow-card-dark relative group h-full">
-              <img src="/assets/img/soliH1%20(3).jfif" alt="Public participant à une édition précédente de SOLIWAYS" loading="lazy" decoding="async" class="w-full h-full min-h-[220px] sm:min-h-[240px] lg:min-h-[250px] object-cover group-hover:scale-[1.02] transition duration-500">
+              <picture class="block w-full h-full">
+                <source srcset="/assets/img/gallery-2.webp" type="image/webp">
+                <img src="/assets/img/soliH1%20(3).jfif" alt="Public participant à une édition précédente de SOLIWAYS" width="1280" height="853" loading="lazy" decoding="async" class="w-full h-full min-h-[220px] sm:min-h-[240px] lg:min-h-[250px] object-cover group-hover:scale-[1.02] transition duration-500">
+              </picture>
               <figcaption class="absolute bottom-0 left-0 right-0 px-4 py-3 bg-gradient-to-t from-black/85 to-transparent text-xs text-slate-300">Public – Édition précédente</figcaption>
             </figure>
             <figure class="rounded-3xl overflow-hidden border border-dark-border shadow-card-dark relative group h-full">
-              <img src="/assets/img/soliH1%20(4).jfif" alt="Équipe présentant un projet lors d'une édition précédente de SOLIWAYS" loading="lazy" decoding="async" class="w-full h-full min-h-[220px] sm:min-h-[240px] lg:min-h-[250px] object-cover group-hover:scale-[1.02] transition duration-500">
+              <picture class="block w-full h-full">
+                <source srcset="/assets/img/gallery-3.webp" type="image/webp">
+                <img src="/assets/img/soliH1%20(4).jfif" alt="Équipe présentant un projet lors d'une édition précédente de SOLIWAYS" width="1600" height="1200" loading="lazy" decoding="async" class="w-full h-full min-h-[220px] sm:min-h-[240px] lg:min-h-[250px] object-cover group-hover:scale-[1.02] transition duration-500">
+              </picture>
               <figcaption class="absolute bottom-0 left-0 right-0 px-4 py-3 bg-gradient-to-t from-black/85 to-transparent text-xs text-slate-300">Présentation de projet – Édition précédente</figcaption>
             </figure>
           </div>
@@ -750,10 +869,16 @@
         </div>
         <div class="flex flex-wrap items-center justify-center gap-4">
           <a href="https://solicode.co/" target="_blank" rel="noopener noreferrer" class="p-6 sm:p-8 rounded-2xl bg-dark-surface/90 border border-dark-border shadow-card-dark flex items-center justify-center max-w-lg w-full sm:w-auto hover:border-primary/40 transition duration-300">
-            <img src="/assets/img/solicode_tanger_cover.png" alt="Logo SOLICODE Tanger" class="h-20 sm:h-24 md:h-28 w-auto max-w-full object-contain drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)]">
+            <picture class="flex items-center justify-center">
+              <source srcset="/assets/img/solicode_tanger_cover.webp" type="image/webp">
+              <img src="/assets/img/solicode_tanger_cover.png" alt="Logo SOLICODE Tanger" width="2010" height="500" loading="lazy" decoding="async" class="h-20 sm:h-24 md:h-28 w-auto max-w-full object-contain drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)]">
+            </picture>
           </a>
           <a href="https://artvot.com/" target="_blank" rel="noopener noreferrer" class="p-6 sm:p-8 rounded-2xl bg-dark-surface/90 border border-dark-border shadow-card-dark flex items-center justify-center max-w-lg w-full sm:w-auto hover:border-primary/40 transition duration-300">
-            <img src="/assets/img/artvot-logo.png" alt="Artvot logo" class="h-20 sm:h-24 md:h-28 w-auto max-w-full object-contain drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)]">
+            <picture class="flex items-center justify-center">
+              <source srcset="/assets/img/artvot-logo.webp" type="image/webp">
+              <img src="/assets/img/artvot-logo.png" alt="Logo Artvot" width="926" height="768" loading="lazy" decoding="async" class="h-20 sm:h-24 md:h-28 w-auto max-w-full object-contain drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)]">
+            </picture>
           </a>
         </div>
       </div>
@@ -957,12 +1082,12 @@
         <!-- Brand Info -->
         <div class="lg:col-span-4 space-y-4">
           <div class="flex items-center gap-3">
-            <img src="/assets/img/logo-nav-dark.png" alt="Soliways Logo" class="h-10 w-auto">
+            <img src="/assets/img/logo-nav-dark.png" alt="Logo SOLIWAYS" width="193" height="48" class="h-10 w-auto">
           </div>
           <p class="text-sm text-slate-400 max-w-sm leading-relaxed">
             Événement organisé par SOLIWAYS à Tanger du 13 au 16 avril 2027. La technologie au cœur de l’apprentissage et du partage.
           </p>
-          <div class="pt-2 text-xs text-slate-500 font-mono tracking-wider">
+          <div class="pt-2 text-xs text-slate-400 font-mono tracking-wider">
             THE WAY TO SUCCESS • YOUR FUTURE STARTS HERE
           </div>
         </div>
@@ -978,7 +1103,7 @@
             <li><a href="#equipe" class="hover:text-primary transition">SOLIWAYS</a></li>
             <li><a href="#partenaires" class="hover:text-primary transition">Partenaires & Sponsors</a></li>
             <li><a href="#pratique" class="hover:text-primary transition">Informations pratiques & FAQ</a></li>
-            <li><a href="/en.html" class="hover:text-primary transition">English version</a></li>
+            <li><a href="/en" class="hover:text-primary transition">English version</a></li>
           </ul>
         </div>
 
@@ -1004,10 +1129,10 @@
       </div>
 
       <!-- Bottom Row: Copyright & Socials -->
-      <div class="pt-8 border-t border-dark-border flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+      <div class="pt-8 border-t border-dark-border flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
         <div>
           © 2027 SOLIWAYS — Organisé par SOLIWAYS. Tous droits réservés.
-         <br> Powerd by Aura-Soli Team
+         <br> Powered by Aura-Soli Team
         </div>
         <div class="flex items-center gap-6">
           <a href="#accueil" class="hover:text-slate-300 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/70 focus-visible:rounded">Haut de page ↑</a>

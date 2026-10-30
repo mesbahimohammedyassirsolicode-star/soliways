@@ -1,28 +1,130 @@
-# SOLIWAYS 2027 - Full AI-readable content
+# SOLIWAYS 2027 — Full AI-readable content
 
-## Event (confirmed)
-- Name: SOLIWAYS 2027
-- Dates: April 13–16, 2027
-- Start (confirmed): 2027-04-13T09:00:00+01:00
-- End (confirmed): 2027-04-16T18:00:00+01:00
-- Location: SOLICODE, Tangier, Morocco
-- Organizer: SOLIWAYS
-- Attendance: In-person
+> SOLIWAYS 2027 is a four-day technology event in Tangier, Morocco, organized by SOLIWAYS and held at SOLICODE from 13 to 16 April 2027. It combines workshops, a forum, meetups, speaker talks and a web-development hackathon around web development, artificial intelligence, cybersecurity, digital marketing and IT freelancing.
+
+## Event facts
+
+- Official name: SOLIWAYS 2027
+- Edition: 2027
+- Type: Technology event (workshops, talks, meetups, forum, hackathon)
+- Start: 2027-04-13T09:00:00+01:00
+- End: 2027-04-16T18:00:00+01:00
+- Venue: SOLICODE, Tangier, Morocco
+- City: Tangier (Tanger), Morocco
+- Format: In-person
 - Event status: Scheduled
-- Audience: General public
-- Languages: French, English
+- Audience: General public, students, beginners, technology enthusiasts, developers and freelancers
+- Languages: French and English
+- Organizer: SOLIWAYS
+- Website: https://soli-ways.online/
 
-## Pages
-- French: https://www.soli-ways.online/
-- English: https://www.soli-ways.online/en.html
+## What is SOLIWAYS?
 
-## Gallery
-- Photos from previous editions (not SOLIWAYS 2027): award ceremony, audience, project presentation.
+SOLIWAYS is the organizer and brand behind SOLIWAYS 2027, an event dedicated to computing, digital technologies and knowledge sharing. The event is designed as a space to learn, exchange experiences and practise digital skills.
+
+The official website presents SOLIWAYS 2027 as an initiative built around IT, learning and the exchange of experiences, with several days of activities covering different areas of the digital world.
+
+## Mission and vision
+
+- Vision: make SOLIWAYS a meeting and discovery space around digital technologies.
+- Approach: learn new IT topics, exchange ideas and experiences, and put knowledge into practice through workshops and a hackathon.
+- Tagline: “La technologie au cœur de l’apprentissage et du partage.” (Technology at the heart of learning and sharing.)
+
+## Programme
+
+### 13 April 2027 — Opening and digital workshops
+
+Official launch of SOLIWAYS 2027, welcome of participants, introduction to the event, and discovery of the main digital fields through introductory workshops.
+
+### 14 April 2027 — In-depth themed workshops
+
+- Web development and architecture
+- Generative artificial intelligence and prompting techniques
+- Cybersecurity and data protection
+- Digital marketing and IT freelancing
+
+### 15 April 2027 — Forum, meetups and speakers
+
+A day for networking, project discovery and sharing experiences among technology enthusiasts, learners and professionals, with talks on artificial intelligence and cybersecurity.
+
+### 16 April 2027 — Web-development hackathon
+
+A day dedicated to teamwork and building web prototypes in groups, with support from mentors and evaluation by a technical jury.
+
+## Themes
+
+- Web development: creating websites and web applications, and exploring modern digital development.
+- Artificial intelligence and prompting: uses of AI and prompt-writing techniques for working effectively with AI tools.
+- Cybersecurity: digital security challenges and protection of systems, networks and data.
+- Digital marketing: digital communication channels and practices for building an online presence.
+- Freelancing and IT entrepreneurship: independent work, client management and building a professional activity in the digital sector.
+
+## Who can participate?
+
+The event is open to the general public: high-school students, university students, curious beginners, technology enthusiasts, developers and freelancers who want to discover or deepen their digital skills. No specific prerequisite is stated on the official website.
 
 ## Registration
-- Status: Coming soon
-- Official registration URL: Not yet confirmed
-- No prices/offers/performers confirmed at publication time
+
+- Status: Coming soon.
+- Official registration URL: not yet published.
+- The website states that the registration link will be available closer to the event.
+- No ticket prices, offers, performers or confirmed speakers are published at the time of this update.
+
+## Location
+
+- Venue: SOLICODE, Tangier, Morocco.
+- The website does not publish a street address.
+
+## Organizer and partners
+
+- Organizer: SOLIWAYS (as stated on the official website).
+- Venue and listed partner: SOLICODE (https://solicode.co/).
+- Listed partner: Artvot (https://artvot.com/).
+- Sponsors: to be announced; none are named yet.
+
+## Contact
+
+- Email: soli-ways@soli-ways.online
+- Instagram: https://www.instagram.com/soli_ways/
+- Website: https://soli-ways.online/
+
+## Official pages
+
+- French homepage: https://soli-ways.online/
+- English homepage: https://soli-ways.online/en
+- AI-readable summary: https://soli-ways.online/llms.txt
+- Sitemap: https://soli-ways.online/sitemap.xml
+
+## Gallery
+
+The website includes photos from previous editions, described as:
+
+- An award and certificate ceremony
+- An audience attending a previous edition
+- A team presenting a project
+
+These photos are not images of SOLIWAYS 2027.
+
+## Structured data published on the website
+
+- Organization: SOLIWAYS
+- WebSite: SOLIWAYS 2027
+- WebPage: French and English homepages
+- Event: SOLIWAYS 2027, 13–16 April 2027, SOLICODE, Tangier, Morocco
+- FAQPage: audience, registration and hackathon questions
+- BreadcrumbList: French homepage and English page hierarchy
+
+## What is not published
+
+- No confirmed speaker names or biographies
+- No sponsor names
+- No ticket prices or registration URL
+- No street address for the venue
+- No attendance figures verified outside the website
 
 ## Notes
-- This file is for AI systems readability. Facts are limited to confirmed information.
+
+- This file summarizes facts published on the official SOLIWAYS website.
+- Content is available in French and English; the French page is the default (x-default).
+- Facts are limited to information published on the official website at the time of writing.
+- Last updated: 30 October 2026.

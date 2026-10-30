@@ -1,5 +1,56 @@
+# robots.txt — https://soli-ways.online
+# Public marketing site for SOLIWAYS 2027.
+# Internal design-system files are not part of the public site.
+
+# --- Search engines -------------------------------------------------------
+User-agent: Googlebot
+Allow: /
+Disallow: /ui-kit/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /ui-kit/
+
+# --- AI search / answer engines (retrieval and citation) ------------------
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /ui-kit/
+
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /ui-kit/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /ui-kit/
+
+# --- AI training crawlers -------------------------------------------------
+# Policy: allowed. This is public promotional content with no private data.
+# To opt out of model training, change each "Allow: /" below to "Disallow: /".
+User-agent: GPTBot
+Allow: /
+Disallow: /ui-kit/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /ui-kit/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /ui-kit/
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /ui-kit/
+
+User-agent: CCBot
+Allow: /
+Disallow: /ui-kit/
+
+# --- Fallback -------------------------------------------------------------
 User-agent: *
 Allow: /
 Disallow: /ui-kit/
 
-Sitemap: https://www.soli-ways.online/sitemap.xml
+# AI-readable summary: https://soli-ways.online/llms.txt
+Sitemap: https://soli-ways.online/sitemap.xml

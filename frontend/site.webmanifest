@@ -1,0 +1,21 @@
+{
+  "name": "SOLIWAYS 2027",
+  "short_name": "SOLIWAYS",
+  "description": "Événement IT et hackathon web à Tanger, du 13 au 16 avril 2027.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0b1323",
+  "theme_color": "#0b1323",
+  "lang": "fr",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/assets/img/logo.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

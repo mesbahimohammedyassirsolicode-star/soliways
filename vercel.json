@@ -4,12 +4,41 @@
   "outputDirectory": "frontend",
   "cleanUrls": true,
   "trailingSlash": false,
-  "rewrites": [],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=(), payment=(), usb=()" },
+        { "key": "Cross-Origin-Opener-Policy", "value": "same-origin" },
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=604800" }
+      ]
+    },
+    {
+      "source": "/(robots.txt|sitemap.xml|llms.txt|llms-full.txt|site.webmanifest)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=3600, stale-while-revalidate=86400" }
+      ]
+    }
+  ],
   "redirects": [],
-  "headers": [],
+  "rewrites": [],
   "routes": [
     {
       "src": "/ui-kit(/.*)?",
+      "dest": "/404.html",
+      "status": 404
+    },
+    {
+      "src": "/(package(-lock)?\\.json|tailwind\\.config\\.js)",
       "dest": "/404.html",
       "status": 404
     }

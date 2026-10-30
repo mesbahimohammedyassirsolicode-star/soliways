@@ -1,18 +1,87 @@
 # SOLIWAYS 2027
 
-## Event
-- Name: SOLIWAYS 2027
-- Dates: April 13–16, 2027
-- Location: SOLICODE, Tangier, Morocco
-- Organizer: SOLIWAYS
-- Audience: General public
-- Languages: French, English
-- Status: Registrations coming soon (no confirmed public registration URL yet)
+> SOLIWAYS 2027 is a four-day technology event in Tangier, Morocco, organized by SOLIWAYS and held at SOLICODE from 13 to 16 April 2027. It combines workshops, a forum, meetups, speaker talks and a web-development hackathon around web development, artificial intelligence, cybersecurity, digital marketing and IT freelancing.
 
-## Pages
-- https://www.soli-ways.online/ (French)
-- https://www.soli-ways.online/en.html (English)
+## What is SOLIWAYS?
+
+SOLIWAYS is the organizer and brand behind SOLIWAYS 2027, an event dedicated to computing, digital technologies and knowledge sharing. The event is designed as a space to learn, exchange experiences and practise digital skills.
+
+- Official name: SOLIWAYS 2027
+- Type: Technology event (workshops, talks, meetups, forum, hackathon)
+- Edition: 2027
+- Dates: 13–16 April 2027
+- Venue: SOLICODE, Tangier, Morocco
+- Format: In-person
+- Languages: French and English
+- Status: Scheduled
+- Audience: General public, students, beginners, technology enthusiasts, developers and freelancers
+
+## Mission and vision
+
+- Vision: make SOLIWAYS a meeting and discovery space around digital technologies.
+- Approach: learn new IT topics, exchange ideas and experiences, and put knowledge into practice through workshops and a hackathon.
+- Tagline: “La technologie au cœur de l’apprentissage et du partage.” (Technology at the heart of learning and sharing.)
+
+## Activities
+
+- Themed workshops on web development, artificial intelligence and prompting, cybersecurity, digital marketing, and freelancing.
+- A forum and meetups for networking and sharing experiences.
+- Talks by speakers on artificial intelligence and cybersecurity.
+- A web-development hackathon with team projects, mentors and a technical jury.
+
+## Programme
+
+- 13 April 2027 — Opening and digital workshops: official launch, introduction to the event, discovery of the main digital fields.
+- 14 April 2027 — In-depth themed workshops: web development and architecture, generative AI and prompting, cybersecurity and data protection, digital marketing and IT freelancing.
+- 15 April 2027 — Forum, meetups and speakers: networking, project discovery, and talks on artificial intelligence and cybersecurity.
+- 16 April 2027 — Web-development hackathon: teamwork, prototype building, mentoring and evaluation by a technical jury.
+
+## Themes
+
+- Web development
+- Artificial intelligence and prompting
+- Cybersecurity
+- Digital marketing
+- Freelancing and IT entrepreneurship
+
+## Who can participate?
+
+The event is open to the general public: high-school students, university students, curious beginners, technology enthusiasts, developers and freelancers who want to discover or deepen their digital skills. No specific prerequisite is stated on the official website.
+
+## Registration
+
+- Status: Coming soon.
+- Official registration URL: not yet published.
+- No ticket prices, offers, performers or confirmed speakers are published at the time of this update.
+
+## Location
+
+- Venue: SOLICODE, Tangier, Morocco.
+- City: Tangier (Tanger), Morocco.
+- The website does not publish a street address.
+
+## Organizer and partners
+
+- Organizer: SOLIWAYS (as stated on the official website).
+- Venue and listed partner: SOLICODE (https://solicode.co/).
+- Listed partner: Artvot (https://artvot.com/).
+- Sponsors: to be announced; none are named yet.
+
+## Contact
+
+- Email: soli-ways@soli-ways.online
+- Instagram: https://www.instagram.com/soli_ways/
+- Website: https://soli-ways.online/
+
+## Official pages
+
+- [French homepage](https://soli-ways.online/): main event page, programme, themes, practical information and FAQ.
+- [English homepage](https://soli-ways.online/en): English version of the same event information.
+- [Full AI-readable content](https://soli-ways.online/llms-full.txt): extended plain-text version of this summary.
 
 ## Notes
-- Focus on the event. No blog.
-- Facts are limited to confirmed information.
+
+- This file summarizes facts published on the official SOLIWAYS website.
+- Content is available in French and English; the French page is the default (`x-default`).
+- Photos in the gallery show previous editions, not SOLIWAYS 2027.
+- Last updated: 30 October 2026.
